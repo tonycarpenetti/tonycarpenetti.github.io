@@ -65,7 +65,7 @@ section {
     left: 20%;
     z-index: 4;
     color: white;
-    font-size-adjust: 
+    font-size-adjust: none;
 }
 
 .a {
