@@ -79,6 +79,7 @@ section {
     position: relative;
     margin: 15% 0% 0% 0%;
     z-index: 1;
+    border-radius: 200px;
 }
 
 .left-col {
@@ -147,7 +148,8 @@ footer a {
         position: relative;
         margin: 15% 0% 0% 0%;
         z-index: 1;
-        max-width: 10px;
+        min-width: 25vw;
+        border-radius: 200px;
     }
 }
 
@@ -174,6 +176,7 @@ footer a {
         position: relative;
         margin: 15% 0% 0% 0%;
         z-index: 1;
+        border-radius: 200px;
     }
 }
 
@@ -193,7 +196,7 @@ footer a {
 
     #footer {
         position: fixed;
-        bottom: -10%;
+        bottom: 0%;
     }
 
     .right-col {
@@ -227,7 +230,7 @@ footer a {
         margin: 25% 0% 0% 0%;
         z-index: 1;
         min-width: 35vw;
-        border-radius: 200px
+        border-radius: 200px;
 
     }
 
@@ -235,7 +238,7 @@ footer a {
         box-sizing: border-box;
         font-size: 1.5em;
         position: absolute;
-        bottom: -10%;
+        bottom: 5%;
         left: 20%;
         z-index: 4;
         color: white;
