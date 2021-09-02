@@ -24,60 +24,53 @@ header {
     padding: 0 0 0 2%;
 }
 
-a:link {
+.gen-link:link, .gen-link:visited {
     text-decoration: none;
     color: rgb(89, 187, 248);
     font-weight: bold;
 }
-a:visited {
-    color: rgb(89, 187, 248);
+.footnote:link {
+    color: black;
 }
-a:hover {
+.gen-link:hover {
     color: rgb(131, 202, 253);
 }
-a:active {
+.gen-link:active {
     color: rgb(59, 59, 59);
 }
 
 .intro {
-    /* box-sizing: border-box; */
     text-align: center;
     font-size: 1.2rem;
-    position: absolute;
-    margin-left: 50%;
-    top: 10%;
+    position: relative;
+    margin: 5% 10% 0 45%;
+    padding: 1rem;
     z-index: 1;
     color: white;
 }
 
 .intro::before {
-    box-sizing: border-box;
     content: ' ';
     position: absolute;
-    width: 30em;
     border-radius: 35px;
     background: rgba(128, 60, 5, 0.6);
-    height: 15em;
-    top: 0%;
-    right: -30%;
     z-index: -1;
-    margin: 0 0 .2em -1.1em;
+    inset: 0;
 }
 
 .tonyheadshot {
+    display: block;
     max-width: 18vw;
-    position: relative;
-    margin: 15% 0% 0% 0%;
     z-index: 1;
+    margin: 2% auto;
     border-radius: 200px;
 }
 
 .swing {
-    box-sizing: border-box;
     font-size: 1.3em;
     position: absolute;
-    bottom: 21%;
-    left: 20%;
+    left: 250px;
+    bottom: 210px;
     z-index: 4;
     color: white;
     font-size-adjust: none;
@@ -88,7 +81,6 @@ a:active {
 }
 
 .swing::before {
-    box-sizing: border-box;
     content: ' ';
     position: absolute;
     width: 14em;
@@ -109,9 +101,6 @@ footer {
     color: rgb(180, 180, 180);
 }
 
-footer .footnote {
-    color: black;
-}
 
 /* 
 @media (max-width: 1200px) {
