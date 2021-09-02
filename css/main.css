@@ -29,7 +29,7 @@ header {
     color: rgb(89, 187, 248);
     font-weight: bold;
 }
-.footnote:link {
+.footnote:link, .footnote:visited {
     color: black;
 }
 .gen-link:hover {
