@@ -35,7 +35,7 @@ header {
 .gen-link:hover {
     color: rgb(131, 202, 253);
 }
-.gen-link:active {
+.footnote:hover, .gen-link:active {
     color: rgb(59, 59, 59);
 }
 
