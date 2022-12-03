@@ -60,9 +60,9 @@ header {
 
 .tonyheadshot {
     display: block;
-    max-width: 18vw;
+    max-width: 300px;
     z-index: 1;
-    margin: 2% auto;
+    margin: -300px 10% 0 10%;
     border-radius: 200px;
 }
 
@@ -99,6 +99,24 @@ footer {
     font-size: 1.1em;
     bottom: 0;
     color: rgb(180, 180, 180);
+}
+
+
+@media (max-width: 960px) {
+    .tonyheadshot {
+        margin: 2% auto;
+        max-width: 300px;
+    }
+
+    .intro {
+        display: block;
+        margin: 5% 10%;
+    }
+
+    .swing {
+        display:block;
+        margin: -150px auto;
+    }
 }
 
 
