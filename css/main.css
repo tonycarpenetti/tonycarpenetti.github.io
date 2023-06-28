@@ -4,6 +4,25 @@ html {
     height: 100%;
 }
 
+.container {
+    position: relative;
+    min-height: calc(100vh - 3.3em);
+    
+}
+
+#content-wrap {
+    padding-bottom: 5.5rem; /* Footer height */
+}
+
+#footer {
+    margin: 12px 0 20px 20px;
+    position: absolute;
+    font-size: 1.1em;
+    bottom: 3.3em;
+    color: rgb(180, 180, 180);
+}
+
+
 body{
     /* background-color: #307D99; */
     background-image: url('../images/swing-bg.JPG');
@@ -11,7 +30,9 @@ body{
     font-family: 'Montserrat', sans-serif;
     font-size: 1em;
     margin: 0;
+    min-height:fit-content;
     color: white;
+    scroll-behavior: smooth;
 }
 
 header {
@@ -68,9 +89,8 @@ header {
 
 .swing {
     font-size: 1.3em;
-    position: absolute;
-    left: 250px;
-    bottom: 210px;
+    position: relative;
+    margin: 15% 10% 0 10%;
     z-index: 4;
     color: white;
     font-size-adjust: none;
@@ -93,29 +113,51 @@ header {
     margin: 0 0 .2em -1.1em;
 }
 
-footer {
-    margin: 12px 0 20px 30px;
-    position: absolute;
-    font-size: 1.1em;
-    bottom: 0;
-    color: rgb(180, 180, 180);
-}
+
 
 
 @media (max-width: 960px) {
-    .tonyheadshot {
-        margin: 2% auto;
-        max-width: 250px;
+    body {
+        background-size: cover;
+        background-position-y: 4.9em;
+        background-repeat: no-repeat;
+        background-color: gray;
     }
-
+    
     .intro {
         display: block;
-        margin: 5% 10%;
+        margin: 8% 10%;
+    }
+
+    .headshot-section {
+        position: relative;
+        margin: 5% auto;
+        padding: 1rem;
+    }
+
+    .tonyheadshot {
+        position: relative;
+        margin: 0 auto;
+        max-width: 50vw;
     }
 
     .swing {
-        display:block;
-        margin: -150px auto;
+        position: relative;
+        margin: 5% auto;
+        text-align: center;
+    }
+
+    .swing::before {
+        content: ' ';
+        position: absolute;
+        width: 75vw;
+        border-radius: 5px;
+        transform: skew(-10deg);
+        background: rgba(128, 60, 5, 0.6);
+        height: 2em;
+        bottom: 0;
+        z-index: -1;
+        margin: -2.2% -37.5%;
     }
 }
 
