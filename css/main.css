@@ -1,32 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-/* html {
-    height: 100%;
-} */
-
+/* .container: The main wrapper for content with relative positioning and padding for footer */
 .container {
-    position: relative;
-    /* min-height: calc(100vh - 3.3em); */
+    position: relative;   /* Allows for absolute positioning of child elements */
     min-height: calc(100svh - 8.8em);
-    flex: 1;
-    padding-bottom: 2em;    
+    flex: 1;   /* Grow to fill available space */
+    padding-bottom: 2em;
 }
 
- /* #content-wrap {
-    padding-bottom: 5.5rem; /* Footer height *
-}    */
-
-
+/* #footer: Footer styles with margin and color settings. 
+Still trying to optimize stickiness and placement of this. */
 #footer {
-    margin: 0 .9em 0 .9em;
     /* position: absolute; */
+    margin: 0 .9em;
     font-size: 1.1em;
     bottom: 1em;
-    padding: 8em 0 0 0;
-    color: rgb(180, 180, 180);
+    padding: 8em 0 0 0;   /* Padding above footer...
+    *** This padding is only needed because the background repeats otherwise :( */
 }
 
-
+/* body: Main body styles including background image and text settings */
 body{
     /* background-color: #307D99; */
     background-image: url('../images/swing-bg.JPG');
@@ -35,25 +28,30 @@ body{
     font-family: 'Montserrat', sans-serif;
     font-size: 1em;
     margin: 0;
-    min-height: fit-content;
+    min-height: fit-content;   /* Trying to fix repeating image issue */
     color: white;
     scroll-behavior: smooth;
-    display: flex;
-    flex-direction: column;
+    display: flex;   /* Using flexbox layout */
+    flex-direction: column;   /* Stack children vertically */
 }
 
+/* header: Not extremely happy with the gray background and offset of the 
+background image to be below the header. Would like to have the header
+over-top of the background image and blending in with it. */
 header {
     /* min-height: 5svh; */
     background: linear-gradient(White,gray);
     padding: .7em;
 }
 
+/* .tdc-logo TO-DO: Replace with just logo when screen is small enough */
 .tdc-logo {
     max-height: 3.2rem;
     padding: 0 0 0 2%;
 
 }
 
+/* Links: Pretty happy with link colors and behavior */
 .gen-link:link, .gen-link:visited {
     text-decoration: none;
     color: rgb(89, 187, 248);
@@ -69,9 +67,10 @@ header {
     color: rgb(59, 59, 59);
 }
 
+/* .intro: "Hello!" section */
 .intro {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.2rem;   /* Larger font size than default */
     position: relative;
     margin: 5% 10% 0 45%;
     padding: 1rem;
@@ -79,39 +78,42 @@ header {
     color: white;
 }
 
+/* Pseudo-element for the .intro to create a background effect */
 .intro::before {
     content: ' ';
     position: absolute;
     border-radius: 35px;
     background: linear-gradient(black,black,rgba(31, 31, 31, 0.699));
     z-index: -1;
-    inset: 0;
+    inset: 0;   /* Stretch to cover parent */
 }
 
+/* Might switch out with newer image at some point */
 .tonyheadshot {
     display: block;
     max-width: 300px;
     z-index: 1;
-    margin: -300px 10% 0 10%;
+    margin: -300px 10% 0;
     border-radius: 200px;
 }
 
+/* .swing: Would like to align this better with the swing in the background image 
+Specifically in the media query section though */
 .swing {
     font-size: 1.3em;
     position: relative;
     width: 80%;
     max-width: 600px;
     margin: 15% 15% 0;
-    /* margin: 15% 10% 0 10%; */
     z-index: 4;
     color: white;
-    font-size-adjust: none;
 }
 
 .swinging {
     font-style: italic;
 }
 
+/* Pseudo-element for .swing for a background effect */
 .swing::before {
     content: ' ';
     position: absolute;
@@ -131,8 +133,9 @@ header {
     body {
         background-size: cover;
         background-position-y: 4.8em;
-        background-repeat: no-repeat;
-        background-color: gray;
+        /* background-color: gray;
+        *** Gray background was appearing on sides of phone in landscape mode
+        but not in the resposive viewer on the computer */
     }
     
     .intro {
@@ -146,12 +149,15 @@ header {
         padding: 1rem;
     }
 
+    /* Image is a little too large when close to max media width at 50vh,
+    but gets a little too small when on thinner screen at 40vh */
     .tonyheadshot {
         position: relative;
         margin: 0 auto;
-        max-width: 50vw;
+        max-width: 45vw;
     }
 
+    /* Would like to align better with swing in background image */
     .swing {
         position: relative;
         margin: 5% auto;
