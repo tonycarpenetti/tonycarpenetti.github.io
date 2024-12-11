@@ -21,7 +21,7 @@ Still trying to optimize stickiness and placement of this. */
 
 /* body: Main body styles including background image and text settings */
 body{
-    /* background-color: #307D99; */
+    background-color: rgb(20,20,20);
     background-image: url('../images/swing-bg.JPG');
     background-repeat: no-repeat;
     background-size: cover;

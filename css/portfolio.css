@@ -21,16 +21,11 @@ Still trying to optimize stickiness and placement of this. */
 
 /* body: Main body styles including background image and text settings */
 body{
-    /* background-color: #307D99; */
-    background-image: url('../images/swing-bg.JPG');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center calc(100% + 4.8em);
+    background-color: rgb(20,20,20);
+    background-image: none;
     font-family: 'Montserrat', sans-serif;
     font-size: 1em;
     margin: 0;
-    min-height: fit-content;   /* Trying to fix repeating image issue */
-    color: white;
     scroll-behavior: smooth;
     display: flex;   /* Using flexbox layout */
     flex-direction: column;   /* Stack children vertically */
@@ -59,7 +54,7 @@ header {
     font-weight: bold;
 }
 .footnote:link, .footnote:visited {
-    color: black;
+    color: rgb(90, 90, 90);
 }
 .gen-link:hover {
     color: rgb(131, 202, 253);
@@ -73,7 +68,7 @@ header {
     text-align: center;
     font-size: 1.2rem;   /* Larger font size than default */
     position: relative;
-    margin: 5% 10% 0 45%;
+    margin: 5% 25% 5% 25%;
     padding: 1rem;
     z-index: 1;
     color: white;
@@ -103,4 +98,9 @@ header {
         bottom: .1em;
     }
 
+    /* .intro: "Hello!" section */
+    .intro {
+        margin: 5% 10% 5% 10%;
+    }
+    
 }
