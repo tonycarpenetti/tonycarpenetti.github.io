@@ -98,9 +98,9 @@ header {
         but not in the resposive viewer on the computer */
     }
     
-    .intro {
-        display: block;
-        margin: 8% 10%;
+    .footnote {
+        position: relative;
+        bottom: .1em;
     }
 
 }
