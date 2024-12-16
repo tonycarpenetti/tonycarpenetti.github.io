@@ -128,6 +128,15 @@ Specifically in the media query section though */
     margin: 0 0 .2em -1.1em;
 }
 
+/* Center the resume thumbnail */
+.resume {
+    text-align: center;
+}
+.resume-thumbnail {
+     display: inline;
+     margin-left: auto;
+     margin-right: auto;
+}
 
 
 @media (max-width: 960px) {
