@@ -33,8 +33,8 @@ body.fly-in {
 body {
     background-image: url('../images/lion-light.jpg');
     background-size: cover;
-    background-position: center calc(100% - 20vh);
-    transition: background-position 1.5s ease-out;
+    background-position: calc(100% + 60vw) calc(100% + 4.8em);
+    transition: background-position 1.2s ease-out;
 }
 
 body.fly-in {
