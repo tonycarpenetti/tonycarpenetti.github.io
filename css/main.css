@@ -17,6 +17,7 @@ Still trying to optimize stickiness and placement of this. */
     bottom: -1.7em;
     padding: 8em 0 1.2em 0;   /* Padding above footer...
     *** This padding is only needed because the background repeats otherwise :( */
+    z-index: -3;
 }
 
 /* body: Main body styles including background image and text settings */

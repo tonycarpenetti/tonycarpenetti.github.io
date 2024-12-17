@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 /* Changed the background on pages other than the home page */
-body{
+body {
     background-image: url('../images/light-nobg.png'), url('../images/lion-solo.jpg');
     background-size: 960px;
-    background-position: right top, left calc(100% + 4.8em);
-    /* position: fixed;
-    top: -100vh;
-    transition: top 1s ease-in-out; */
+    background-position: right -30vh, left calc(100% + 70vh); /* Initial position */
+    transition: background-position 2s ease-in-out;
+}
+
+body.fly-in {
+    background-position: right top, left calc(100% + 4.8em); /* Final position */
 }
 
 /* Changed to center on pages other than the home page */
@@ -31,6 +33,11 @@ body{
 body {
     background-image: url('../images/lion-light.jpg');
     background-size: cover;
-    background-position: center calc(100% + 4.8em);
+    background-position: center calc(100% - 20vh);
+    transition: background-position 1.5s ease-out;
+}
+
+body.fly-in {
+    background-position: center calc(100% + 4.8em);  /* Final postition for smaller screens */
 }
 }
