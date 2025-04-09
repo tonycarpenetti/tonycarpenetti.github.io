@@ -1,0 +1,3 @@
+[submodule "food"]
+    path = dist
+    url = git://github.com/tonycarpenetti/food.git
