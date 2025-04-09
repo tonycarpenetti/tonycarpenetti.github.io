@@ -135,7 +135,7 @@ Specifically in the media query section though */
     text-align: center;
     max-width: 100vw;
 }
-.resume-thumbnail-2 {
+.resume-thumbnail {
      display: inline;
      margin-left: auto;
      margin-right: auto;
