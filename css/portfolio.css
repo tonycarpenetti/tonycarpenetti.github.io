@@ -14,7 +14,7 @@ body.fly-in {
 
 /* Changed to center on pages other than the home page */
 .intro {
-    margin: 5% 15vw 10%;
+    margin: 5% 15vw 15%;
 }
 
 .website-example {
@@ -49,12 +49,12 @@ body.fly-in {
 @media (max-width: 960px) {
 /* Changed to adjust intro background margin on smaller screens */
 .intro {
-    margin: 5%;
+    margin: 5% 15vw 25%;
 }
 body {
-    background-image: url('../images/lion-light.jpg');
+    background-image: url('../images/light-nobg.png'), url('../images/lion-solo.jpg');
     background-size: cover;
-    background-position: calc(100% + 60vw) calc(100% + 4.8em);
+    background-position: top 0px, right calc(100% + 2em) bottom -200px left -200px;
     transition: background-position 1.2s ease-out;
 }
 
