@@ -14,7 +14,28 @@ body.fly-in {
 
 /* Changed to center on pages other than the home page */
 .intro {
-    margin: 5% 15vw;
+    margin: 5% 15vw 10%;
+}
+
+.website-example {
+    /* text-align: center; */
+    /* font-size: 1.2rem;   Larger font size than default */
+    position: relative;
+    /* margin: 5% 10% 0 45%; */
+    padding: 1rem;
+    z-index: 1;
+    color: white;
+    /* margin: 3%; */
+}
+
+/* Pseudo-element for the .intro to create a background effect */
+.website-example::before {
+    content: ' ';
+    position: absolute;
+    border-radius: 35px;
+    background: linear-gradient(black,black,rgba(31, 31, 31, 0.699));
+    z-index: -1;
+    inset: 0;   /* Stretch to cover parent */
 }
 
 /* Changed the footer text color to be more visible on dark background */
