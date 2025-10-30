@@ -18,15 +18,13 @@ body.fly-in {
 }
 
 .website-example {
-    /* text-align: center; */
-    /* font-size: 1.2rem;   Larger font size than default */
     position: relative;
     padding: 1rem;
     padding-top: 21px;
-    z-index: 1;
+    z-index: 0;
     color: white;
     overflow: hidden;
-    /* margin: 3%; */
+    border-radius: 35px;
 }
 
 /* Pseudo-element for the .intro to create a background effect */
@@ -39,7 +37,27 @@ body.fly-in {
     inset: 0;   /* Stretch to cover parent */
 }
 
+/* Insert Code Here */
+.website-example::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0; /* adjust to align with image top if needed */
+    width: 120px; /* gradient width */
+    height: 623px; /* same as your image max-height */
+
+    background: linear-gradient(to left, rgba(0,0,0,0.85), rgba(0,0,0,0));
+    pointer-events: none;
+    z-index: 2; /* above background but below text */
+}
+
+#hibana-example::after {
+    height: 180px; /* same as your image max-height */
+}
+/* Insert Code Here */
+
 .wide-image {
+    max-height: 601px;
     border-radius: 20px;
 }
 
@@ -61,11 +79,6 @@ body.fly-in {
     z-index: -1;
 }
 
-/* #Hockey {
-    position: absolute;
-    inset: 10px 25px 0px 350px;
-} */
-
 /* Changed the footer text color to be more visible on dark background */
 .footnote:link, .footnote:visited {
     color: rgb(61, 61, 61);
@@ -81,7 +94,6 @@ body.fly-in {
 }
 body {
     background-image: url('../images/light-nobg.png'), url('../images/lion-solo.jpg');
-    /* background-size: cover; */
     background-position: top 0px, right calc(100% + 2em) bottom -200px left -200px;
     transition: background-position 1.2s ease-out;
 }
@@ -96,6 +108,14 @@ body.fly-in {
 
 .ticket {
     max-height: 400px;
+}
+
+.wide-image {
+    max-height: 411px;
+}
+
+.website-example::after {
+    height: 433px
 }
 
 }
