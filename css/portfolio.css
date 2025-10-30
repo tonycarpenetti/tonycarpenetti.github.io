@@ -21,10 +21,11 @@ body.fly-in {
     /* text-align: center; */
     /* font-size: 1.2rem;   Larger font size than default */
     position: relative;
-    /* margin: 5% 10% 0 45%; */
     padding: 1rem;
+    padding-top: 21px;
     z-index: 1;
     color: white;
+    overflow: hidden;
     /* margin: 3%; */
 }
 
@@ -39,16 +40,12 @@ body.fly-in {
 }
 
 .wide-image {
-    display: block;
-    /* width: 100%; */
-    height: auto;
-    position: relative;
     border-radius: 20px;
-    overflow: hidden;
 }
 
 .ticket {
     max-height: 600px;
+    padding-bottom: 20px;
 }
 
 #ticket14 {
@@ -58,9 +55,9 @@ body.fly-in {
 }
 
 #christmas-tickets {
-    max-height: 600px;
+    max-height: 590px;
     position: absolute;
-    inset: 32px 20px;
+    inset: 33px;
     z-index: -1;
 }
 
