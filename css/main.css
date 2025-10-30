@@ -42,7 +42,7 @@ body{
 background image to be below the header. Would like to have the header
 over-top of the background image and blending in with it. */
 header {
-    /* min-height: 5svh; */
+    position: relative;
     background: linear-gradient(White,gray);
     padding: .7em;
 }

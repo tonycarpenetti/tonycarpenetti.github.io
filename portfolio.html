@@ -1,56 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta property="og:image" content="./images/tony-carpenetti-logo_2.jpg">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tony Carpenetti</title>
     <meta name="author" content="Tony">
+    <meta property="og:image" content="./images/tony-carpenetti-logo_2.jpg">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
 <body id="body1">
     <header class="header">
-        <a href="https://tonycarpenetti.github.io"><img class="tdc-logo" src="./images/tony-carpenetti-logo_5.png" alt="TDC"></a>
+        <div class="navbar">
+            <!-- Top Navigation Menu -->
+            <div class="logo">
+                <a href="https://tonycarpenetti.github.io">
+                    <img class="tdc-logo" src="./images/tony-carpenetti-logo_5.png" alt="TDC">
+                </a>
+            </div>
+            <ul class="links">
+                <li><a href="Home">Home</a></li>
+                <li><a href="About">About</a></li>
+                <li><a href="Portfolio">Portfolio</a></li>
+                <li><a href="Blog">Blog</a></li>
+            </ul>
+            <a href="#" class="action_btn">Menu</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+        <div class="dropdown_menu">
+            <ul>
+                <li><a href="Home">Home</a></li>
+                <li><a href="About">About</a></li>
+                <li><a href="Portfolio">Portfolio</a></li>
+                <li><a href="Blog">Blog</a></li>
+                <li><a href="#" class="action_btn">Menu</a></li>
+            </ul>
+        </div>
     </header>
+
+    <script>const toggleBtn = document.querySelector('.toggle_btn')
+    const toggleBtnIcon = document.querySelector('.toggle_btn i')
+    const dropDownMenu = document.querySelector('.dropdown_menu')
+
+    toggleBtn.onclick = function () {
+        dropDownMenu.classList.toggle('open')
+    };
+    </script>
 
     <div class="container">
         <div id="content-wrap">
             <section class="intro">
                 <h1><span class="hello">Welcome to my portfolio!</span></h1>
-                <p><a class="gen-link" href="https://github.com/tonycarpenetti" target=_blank>My Guthub Page</a></li></p>
+                <p><a class="gen-link" href="https://github.com/tonycarpenetti" target="_blank">My Github Page</a></p>
                 <p>Please feel free to explore some of my projects below:</p>
             </section>
+
             <section id="hibana-example" class="website-example">
-                <a href="https://hibanausa.org" target=_blank>
-                    <img class="wide-image" src="./images/hibana-logo.png" alt="HIBANA"></a></p>
-                <h2><a class="gen-link" href="https://hibanausa.org" target=_blank>Huntsville Business Alliance of North Alabama (HIBANA)</a></h2>
-                <p>This is a website I created for a hispanic non-profit organization using Squarespace. 
-                <br>I also re-created their logo to provide scalable copies using Affinity Designer.</p>
+                <a href="https://hibanausa.org" target="_blank">
+                    <img class="wide-image" src="./images/hibana-logo.png" alt="HIBANA">
+                </a>
+                <h2><a class="gen-link" href="https://hibanausa.org" target="_blank">Huntsville Business Alliance of North Alabama (HIBANA)</a></h2>
+                <p>This is a website I created for a hispanic non-profit organization using Squarespace.<br>
+                I also re-created their logo to provide scalable copies using Affinity Designer.</p>
             </section>
+
             <section class="website-example">
-                <a href="./images/Pens-Jackets_SEAT-13.png" target=_blank>
-                    <img id="ticket13" class="ticket" src="./images/Pens-Jackets_SEAT-13.png" alt="Penguins vs Blue Jackets Ticket #13 Stub"></a>
-                <a href="./images/Pens-Jackets_SEAT-14.png" target=_blank>
-                    <img id="ticket14" class="ticket" src="./images/Pens-Jackets_SEAT-14.png" alt="Penguins vs Blue Jackets Ticket #14 Stub"></a>
-                <a href="./images/Christmas-2019.jpg" target=_blank>
-                    <img id=christmas-tickets class="wide-image" src="./images/Christmas-2019.jpg"></a>
-                <h2><a class="gen-link" href="./images/Pens-Jackets_SEAT-13.png" target=_blank>Hockey Game Ticket Stubs</a></h2>
+                <a href="./images/Pens-Jackets_SEAT-13.png" target="_blank">
+                    <img id="ticket13" class="ticket" src="./images/Pens-Jackets_SEAT-13.png" alt="Penguins vs Blue Jackets Ticket #13 Stub">
+                </a>
+                <a href="./images/Pens-Jackets_SEAT-14.png" target="_blank">
+                    <img id="ticket14" class="ticket" src="./images/Pens-Jackets_SEAT-14.png" alt="Penguins vs Blue Jackets Ticket #14 Stub">
+                </a>
+                <a href="./images/Christmas-2019.jpg" target="_blank">
+                    <img id="christmas-tickets" class="wide-image" src="./images/Christmas-2019.jpg" alt="Christmas 2019 Tickets">
+                </a>
+                <h2><a class="gen-link" href="./images/Pens-Jackets_SEAT-13.png" target="_blank">Hockey Game Ticket Stubs</a></h2>
                 <p>I designed these ticket stubs using Affinity Designer to go along with the digital tickets my siblings and I got our parents.</p> 
                 <p>It was nice to have something tangible for them to open on Christmas morning!</p>
-                </section>
-            <section class="website-example">
-                <a href="https://tonycarpenetti.github.io/food" target=_blank><img id=food-website-thumbnail class="wide-image" src="./images/food-website.png" alt="Food Website Thumnail Image"></a></p>
-                <h2><a class="gen-link" href="https://tonycarpenetti.github.io/food" target=_blank>Food Website Example</a></h2>
-                <p>This is a simple example of a food website using HTML, CSS, and JavaScript. It includes a responsive design, 
-                    a navigation bar, and a search bar.</p>
             </section>
+
+            <section class="website-example">
+                <a href="https://tonycarpenetti.github.io/food" target="_blank">
+                    <img id="food-website-thumbnail" class="wide-image" src="./images/food-website.png" alt="Food Website Thumbnail Image">
+                </a>
+                <h2><a class="gen-link" href="https://tonycarpenetti.github.io/food" target="_blank">Food Website Example</a></h2>
+                <p>This is a simple example of a food website using HTML, CSS, and JavaScript. It includes a responsive design, 
+                a navigation bar, and a search bar.</p>
+            </section>
+
             <footer id="footer">
-                <a class="gen-link footnote" href="https://tonycarpenetti.github.io">&copy Tony Carpenetti 2025</a>
+                <a class="gen-link footnote" href="https://tonycarpenetti.github.io">&copy; Tony Carpenetti 2025</a>
             </footer>
         </div>
     </div>
-    <script src="./css/automation.js"></script>
+    <script src="./js/automation.js"></script>
+    <!-- <script>console.log('inline script works');</script> -->
 </body>
 </html>

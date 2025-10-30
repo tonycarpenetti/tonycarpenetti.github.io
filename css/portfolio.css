@@ -1,5 +1,146 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
+
+li{
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+}
+
+a:hover {
+    color: rgb(131, 202, 253);
+}
+
+.navbar {
+    /* width: 100%; */
+    height: 60px;
+    max-width: 95vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.logo {
+    margin-right: auto;
+}
+
+.navbar .links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.navbar .toggle_btn {
+    color: black;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.action_btn {
+    background-color: rgb(131, 202, 253);
+    color: black;
+    padding: .5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 14px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale .2 ease;
+}
+
+.action_btn:hover {
+    scale: 1.05;
+    color: black;
+}
+
+.action_btn:active {
+    scale: 0.95;
+}
+
+.dropdown_menu {
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 250px;
+    background: rgba(255, 255, 255, 0.26);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 2;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open {
+    height: 240px;
+}
+
+.dropdown_menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_menu .action_btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Style the navigation menu * /
+.navbar {
+  overflow: hidden;
+  background-color: #white;
+  position: relative;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) * / 
+.navbar #myLinks {
+  display: none;
+}
+
+/* Style navigation menu links * /
+.navbar a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+/* Style the hamburger menu * /
+.navbar a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* Add a grey background color on mouse-over * /
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the active link (or home/logo) * /
+.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+
+/* ------------------------------------------------------------------------ */
+
 /* Changed the background on pages other than the home page */
 body {
     background-image: url('../images/light-nobg.png'), url('../images/lion-solo.jpg');
@@ -88,34 +229,49 @@ body.fly-in {
 }
 
 @media (max-width: 960px) {
-/* Changed to adjust intro background margin on smaller screens */
-.intro {
-    margin: 5% 15vw 25%;
-}
-body {
-    background-image: url('../images/light-nobg.png'), url('../images/lion-solo.jpg');
-    background-position: top 0px, right calc(100% + 2em) bottom -200px left -200px;
-    transition: background-position 1.2s ease-out;
-}
 
-body.fly-in {
-    background-position: center calc(100% + 4.8em);  /* Final postition for smaller screens */
-}
+    .navbar .links,
+    .navbar .action_btn {
+        display: none;
+    }
 
-#christmas-tickets {
-    max-height: 400px;
-}
+    .navbar .toggle_btn {
+        display: block
+    }
 
-.ticket {
-    max-height: 400px;
-}
+    .dropdown_menu {
+        display: block;
+    }
 
-.wide-image {
-    max-height: 411px;
-}
 
-.website-example::after {
-    height: 433px
-}
+    /* Changed to adjust intro background margin on smaller screens */
+    .intro {
+        margin: 5% 15vw 25%;
+    }
+    body {
+        background-image: url('../images/light-nobg.png'), url('../images/lion-solo.jpg');
+        background-position: top 0px, right calc(100% + 2em) bottom -200px left -200px;
+        transition: background-position 1.2s ease-out;
+    }
+
+    body.fly-in {
+        background-position: center calc(100% + 4.8em);  /* Final postition for smaller screens */
+    }
+
+    #christmas-tickets {
+        max-height: 400px;
+    }
+
+    .ticket {
+        max-height: 400px;
+    }
+
+    .wide-image {
+        max-height: 411px;
+    }
+
+    .website-example::after {
+        height: 433px
+    }
 
 }
