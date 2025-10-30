@@ -33,10 +33,41 @@ body.fly-in {
     content: ' ';
     position: absolute;
     border-radius: 35px;
-    background: linear-gradient(black,black,rgba(31, 31, 31, 0.699));
+    background: linear-gradient(rgb(100,100,100,.93),black,rgba(31, 31, 31, 0.93));
     z-index: -1;
     inset: 0;   /* Stretch to cover parent */
 }
+
+.wide-image {
+    display: block;
+    /* width: 100%; */
+    height: auto;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.ticket {
+    max-height: 600px;
+}
+
+#ticket14 {
+    position: absolute;
+    inset: 36px 60px;
+    transform: rotate(6deg)
+}
+
+#christmas-tickets {
+    max-height: 600px;
+    position: absolute;
+    inset: 32px 20px;
+    z-index: -1;
+}
+
+/* #Hockey {
+    position: absolute;
+    inset: 10px 25px 0px 350px;
+} */
 
 /* Changed the footer text color to be more visible on dark background */
 .footnote:link, .footnote:visited {
@@ -53,7 +84,7 @@ body.fly-in {
 }
 body {
     background-image: url('../images/light-nobg.png'), url('../images/lion-solo.jpg');
-    background-size: cover;
+    /* background-size: cover; */
     background-position: top 0px, right calc(100% + 2em) bottom -200px left -200px;
     transition: background-position 1.2s ease-out;
 }
@@ -61,4 +92,13 @@ body {
 body.fly-in {
     background-position: center calc(100% + 4.8em);  /* Final postition for smaller screens */
 }
+
+#christmas-tickets {
+    max-height: 400px;
+}
+
+.ticket {
+    max-height: 400px;
+}
+
 }
