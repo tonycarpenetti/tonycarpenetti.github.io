@@ -5,17 +5,18 @@
     position: relative;   /* Allows for absolute positioning of child elements */
     min-height: calc(100svh - 8.8em);
     flex: 1;   /* Grow to fill available space */
-    padding-bottom: 2em;
+    /* padding-bottom: 2em; */
 }
 
 /* #footer: Footer styles with margin and color settings. 
 Still trying to optimize stickiness and placement of this. */
 #footer {
     position: absolute;
-    margin: 0 .9em;
+    margin: 0 0 10px 16px;
     font-size: 1.1em;
-    bottom: -1.7em;
-    padding: 8em 0 1.2em 0;   /* Padding above footer...
+    /* bottom: -1.7em; */
+    padding: .8em 0 14px 0;
+    /* Padding above footer...
     *** This padding is only needed because the background repeats otherwise :( */
     z-index: -3;
 }
@@ -36,6 +37,7 @@ body{
     scroll-behavior: smooth;
     display: flex;   /* Using flexbox layout */
     flex-direction: column;   /* Stack children vertically */
+    /* height: 100vh; */
 }
 
 /* header: Not extremely happy with the gray background and offset of the 
