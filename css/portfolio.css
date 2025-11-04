@@ -9,6 +9,7 @@ a {
     text-decoration: none;
     color: black;
     font-size: 1rem;
+    font-weight: bold;
 }
 
 a:hover {
@@ -16,14 +17,12 @@ a:hover {
 }
 
 .navbar {
-    /* width: 100%; */
-    height: 60px;
-    max-width: 95vw;
+    height: 3.5em;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
     gap: 2rem;
-    padding: 0 1rem;
+    padding: 0 .7rem;
 }
 
 .logo {
@@ -67,10 +66,10 @@ a:hover {
 
 .dropdown_menu {
     position: absolute;
-    right: 2rem;
     top: 60px;
+    right: 2rem;
     height: 0;
-    width: 250px;
+    width: 210px;
     background: rgba(255, 255, 255, 0.26);
     backdrop-filter: blur(15px);
     border-radius: 10px;
@@ -80,7 +79,8 @@ a:hover {
 }
 
 .dropdown_menu.open {
-    height: 240px;
+    height: 222px;
+    padding: 5px 0;
 }
 
 .dropdown_menu li {
@@ -95,6 +95,10 @@ a:hover {
     display: flex;
     justify-content: center;
 }
+
+
+
+
 
 /* Style the navigation menu * /
 .navbar {
@@ -222,10 +226,10 @@ body.fly-in {
 
 /* Changed the footer text color to be more visible on dark background */
 .footnote:link, .footnote:visited {
-    color: rgb(61, 61, 61);
+    color: rgb(200, 200, 200);
 }
 .footnote:hover, .gen-link:active {
-    color: rgb(114, 114, 114);
+    color: rgb(230, 230, 230);
 }
 
 @media (max-width: 960px) {
@@ -273,5 +277,5 @@ body.fly-in {
     .website-example::after {
         height: 433px
     }
-    
+
 }
