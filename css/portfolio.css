@@ -248,15 +248,15 @@ body.fly-in {
     .intro {
         margin: 5% 15vw 25%;
     }
+
     body {
-        background-image: url('../images/light-nobg.png'), url('../images/lion-solo.jpg');
-        background-position: top 0px, right calc(100% + 2em) bottom -200px left -200px;
+        background-position: top 0px, left calc(100%+50vh);  /* Initial position for smaller screens */
         transition: background-position 1.2s ease-out;
     }
 
     body.fly-in {
-        background-position: center calc(100% + 4.8em);  /* Final postition for smaller screens */
-    }
+        background-position: right top, center calc(100% + 4.8em); /* Final position for smaller screens */
+    }   
 
     #christmas-tickets {
         max-height: 400px;
@@ -273,5 +273,5 @@ body.fly-in {
     .website-example::after {
         height: 433px
     }
-
+    
 }
