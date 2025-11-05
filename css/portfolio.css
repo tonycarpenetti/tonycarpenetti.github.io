@@ -96,6 +96,15 @@ a:hover {
     justify-content: center;
 }
 
+.menu-icon {
+  width: 24px;
+  height: 24px;
+  fill: black;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+}
+
 
 
 
@@ -160,7 +169,7 @@ body.fly-in {
 
 /* Changed to center on pages other than the home page */
 .intro {
-    margin: 5% 15vw 5%;
+    margin: 5vh 15vw 15vh;
 }
 
 .website-example {
@@ -251,7 +260,7 @@ body.fly-in {
 
     /* Changed to adjust intro background margin on smaller screens */
     .intro {
-        margin: 5% 15vw 25%;
+        margin: 5vh 15vw 15vh;
     }
 
     body {
