@@ -156,7 +156,7 @@ a:hover {
 
 /* Changed the background on pages other than the home page */
 body {
-    background-image: url('../images/light-nobg.png'), url('../images/lion-solo.jpg');
+    background-image: url('/images/light-nobg.png'), url('/images/lion-solo.jpg');
     background-size: 960px;
     background-position: right -30vh, left calc(100% + 70vh); /* Initial position */
     transition: background-position 2s ease-in-out;

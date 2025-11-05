@@ -11,6 +11,6 @@ window.addEventListener("DOMContentLoaded", () => {
   const link = document.getElementById("resume-link");
   const thumbnail = document.querySelector(".resume-thumbnail");
 
-  if (link) link.href = `./images/Tony-Carpenetti-Resume_${resumeDate}.pdf`;
-  if (thumbnail) thumbnail.src = `./images/resume-thumbnail_${resumeDate}.jpg`;
+  if (link) link.href = `/images/Tony-Carpenetti-Resume_${resumeDate}.pdf`;
+  if (thumbnail) thumbnail.src = `/images/resume-thumbnail_${resumeDate}.jpg`;
 });
