@@ -25,7 +25,7 @@ Still trying to optimize stickiness and placement of this. */
 body{
     /* background-color: rgb(20,20,20); */
     background-color: black;
-    background-image: url('/images/swing-bg.JPG');
+    background-image: url('/images/swing-bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center calc(100% + 4.8em);
