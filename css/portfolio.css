@@ -52,7 +52,7 @@ a:hover {
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    transition: scale .2 ease;
+    transition: scale .2s ease;
 }
 
 .action_btn:hover {
@@ -255,7 +255,7 @@ body.fly-in {
     }
 
     body {
-        background-position: top 0px, left calc(100%+50vh);  /* Initial position for smaller screens */
+        background-position: left top 0px, left calc(100% + 50vh) top;  /* Initial position for smaller screens */
         transition: background-position 1.2s ease-out;
     }
 
