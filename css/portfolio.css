@@ -255,8 +255,8 @@ body.fly-in {
     }
 
     body {
-        background-position: top 0px, center calc(100% + 50vh);  /* Initial position for smaller screens */
-        transition: background-position 1.7s ease-out;
+        background-position: right -40vh, center calc(100% + 50vh);  /* Initial position for smaller screens */
+        transition: background-position 1.2s ease-out;
     }
 
     body.fly-in {
