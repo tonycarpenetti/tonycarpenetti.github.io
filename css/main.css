@@ -83,7 +83,7 @@ nav .toggle_btn {
 
 .dropdown_menu.open {
     height: 222px;
-    padding: 5px 0;
+    padding: 10px 0;
 }
 
 .dropdown_menu li {
@@ -387,5 +387,13 @@ Specifically in the media query section though */
 
     .website-example::after {
         height: 433px
+    }
+}
+
+
+@media (max-width: 400px) {
+    .dropdown_menu {
+        left: 2rem;
+        width: unset;
     }
 }
