@@ -115,24 +115,28 @@ body {
     min-height: 100vh;
     margin: 0;
     background-color: black;
-    background-image: url('/images/swing-bg.jpg');
     background-repeat: no-repeat;
+    scroll-behavior: smooth;
+    background-image: url('/images/light-nobg.png'), url('/images/lion-solo.jpg');
+    background-size: 960px;
+    background-position: right -30vh, left calc(100% + 70vh); /* Initial position */
+    transition: background-position 2s ease-in-out;
+}
+
+#home-body {
+    background-image: url('/images/swing-bg.jpg');
     background-size: cover;
     background-position: center calc(100% + 4.8em);
-    color: white;
-    scroll-behavior: smooth;
+    transition: none;
+}
+
+body.fly-in {
+    background-position: right top, left calc(100% + 4.8em); /* Final position */
 }
 
 main.container {
     flex: 1; /* This expands to fill leftover space between header and footer */
     position: relative;
-}
-
-footer {
-    text-align: left;
-    font-size: 1.1em;
-    padding: .8em 0 14px 16px;
-    z-index: 1;
 }
 
 /* header: Not extremely happy with the gray background and offset of the 
@@ -149,31 +153,46 @@ header {
     max-height: 3.2rem;
 }
 
+footer {
+    text-align: left;
+    font-size: 1.1em;
+    padding: .8em 0 14px 16px;
+    z-index: 1;
+}
+
 /* Links: Pretty happy with link colors and behavior */
 .gen-link:link, .gen-link:visited {
     text-decoration: none;
     color: rgb(89, 187, 248);
-    font-weight: bold;
-}
-.footnote:link, .footnote:visited {
-    color: rgb(0, 0, 0);
-}
+    font-weight: bold;}
 .gen-link:hover {
-    color: rgb(131, 202, 253);
-}
+    color: rgb(131, 202, 253);}
+
+.footnote:link, .footnote:visited {
+    color: rgb(200, 200, 200);}
 .footnote:hover, .gen-link:active {
-    color: rgb(59, 59, 59);
-}
+    color: rgb(230, 230, 230);}
+
+#home-footnote:link, #home-footnote:visited {
+    color: rgb(0, 0, 0);}
+#home-footnote:hover, .gen-link:active {
+    color: rgb(59, 59, 59);}
+    
 
 /* .intro: "Hello!" section */
 .intro {
     text-align: center;
     font-size: 1.1rem;   /* Larger font size than default */
     position: relative;
-    margin: 5% 10% 0 45%;
     padding: 1rem;
     z-index: 1;
     color: white;
+    margin: 5vh 15vw 25vh;
+}
+
+/* Shift "Intro" section to the right on home page */
+#home-intro {
+    margin: 5% 10% 0 45%;
 }
 
 /* Pseudo-element for the .intro to create a background effect */
@@ -189,10 +208,10 @@ header {
 /* Might switch out with newer image at some point */
 .tonyheadshot {
     display: block;
-    max-width: 300px;
     z-index: 1;
-    margin: -300px 10% 0;
     border-radius: 200px;
+    max-width: 300px;
+    margin: -300px 10% 0;
 }
 
 /* .swing: Would like to align this better with the swing in the background image 
@@ -202,7 +221,7 @@ Specifically in the media query section though */
     position: relative;
     width: 80%;
     max-width: 600px;
-    margin: 15% 15% 0;
+    margin: 18vh 18vw auto;
     z-index: 4;
     color: white;
 }
@@ -215,14 +234,14 @@ Specifically in the media query section though */
 .swing::before {
     content: ' ';
     position: absolute;
-    width: 14em;
+    width: 18rem;
     border-radius: 5px;
     transform: skew(-10deg);
     background: rgba(128, 60, 5, 0.6);
-    height: 3em;
-    bottom: -1em;
+    height: 3.5rem;
+    bottom: -1.25rem;
     z-index: -1;
-    margin: 0 0 .2em -1.1em;
+    margin: 0 0 .2rem -1.1rem;
 }
 
 /* Center the resume thumbnail */
@@ -240,9 +259,66 @@ Specifically in the media query section though */
 }
 
 .website-example {
+    position: relative;
     margin: 3%;
+    padding: 1rem;
+    padding-top: 21px;
+    z-index: 0;
+    color: white;
+    overflow: hidden;
+    border-radius: 35px;
 }
 
+/* Pseudo-element for the .intro to create a background effect */
+.website-example::before {
+    content: ' ';
+    position: absolute;
+    border-radius: 35px;
+    background: linear-gradient(rgb(100,100,100,.93),black,rgba(31, 31, 31, 0.93));
+    z-index: -1;
+    inset: 0;   /* Stretch to cover parent */
+}
+
+/* Insert Code Here */
+.website-example::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0; /* adjust to align with image top if needed */
+    width: 120px; /* gradient width */
+    height: 623px; /* same as your image max-height */
+
+    background: linear-gradient(to left, rgba(0,0,0,0.85), rgba(0,0,0,0));
+    pointer-events: none;
+    z-index: 2; /* above background but below text */
+}
+
+#hibana-example::after {
+    height: 180px; /* same as your image max-height */
+}
+
+.wide-image {
+    max-height: 601px;
+    border-radius: 20px;
+}
+
+.ticket {
+    max-height: 600px;
+    padding-bottom: 20px;
+}
+
+#ticket14 {
+    position: absolute;
+    inset: 36px 60px;
+    transform: rotate(6deg)
+}
+
+#christmas-tickets {
+    max-height: 590px;
+    position: absolute;
+    inset: 33px;
+    z-index: -1;
+}
 
 @media (max-width: 960px) {
 
@@ -258,24 +334,14 @@ Specifically in the media query section though */
     .dropdown_menu {
         display: block;
     }
-
-
-    body {
-        background-size: cover;
-        background-position-y: 4.8em;
-        /* background-color: gray;
-        *** Gray background was appearing on sides of phone in landscape mode
-        but not in the resposive viewer on the computer */
-    }
     
     .footnote {
         position: relative;
-        bottom: .1em;
+        bottom: .1rem;
     }
 
-    .intro {
-        display: block;
-        margin: 8% 10%;
+    #home-intro, .intro {
+        margin: 8% 10% 25%;
     }
 
     .headshot-section {
@@ -288,28 +354,38 @@ Specifically in the media query section though */
     but gets a little too small when on thinner screen at 40vh */
     .tonyheadshot {
         position: relative;
-        margin: 0 auto;
         max-width: 45vw;
+        margin: 0 auto;
     }
 
     /* Would like to align better with swing in background image */
     .swing {
-        position: relative;
-        margin: 5% auto;
+        margin: 10vh auto;
         text-align: center;
     }
 
     .swing::before {
-        content: ' ';
-        position: absolute;
-        width: 14em;    
-        height: 3em;
-        border-radius: 5px;
-        background: rgba(128, 60, 5, 0.6);
-        bottom: -1em;
-        left: 52.5%;
-        transform: translateX(-47.5%) skew(-10deg);
-        z-index: -1;
-        /* margin: 0 0 .2em -1.1em; */
+        translate: -125px;
+    }
+
+    body {
+        background-position: right -40vh, center calc(100% + 50vh);  /* Initial position for smaller screens */
+        transition: background-position 1.2s ease-out;
+    }
+
+    body.fly-in {
+        background-position: right top, center calc(100% + 4.8em); /* Final position for smaller screens */
+    }
+
+    #christmas-tickets, .ticket {
+        max-height: 400px;
+    }
+
+    .wide-image {
+        max-height: 412px;
+    }
+
+    .website-example::after {
+        height: 433px
     }
 }

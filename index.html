@@ -1,8 +1,6 @@
 <!--  TO-DO: 
-  1. Add Resume
-  2. Add Blog
-  3. Add Portfolio
-  4. Re-design Home Page -->
+  1. Add Blog
+  2. Re-design Home Page -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,12 +9,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tony Carpenetti</title>
     <meta name="author" content="Tony">
+    <meta property="og:image" content="/images/tdc-solo-logo.png">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="icon" type="image/png" href="/tdc-favicon-light.png" media="(prefers-color-scheme: light)">
     <link rel="icon" type="image/png" href="/tdc-favicon-dark.png" media="(prefers-color-scheme: dark)">
 </head>
 
-<body>
+<body id="home-body">
     <header class="header">
         <nav>
             <div class="logo">
@@ -64,7 +63,7 @@
     </script>
 
     <main class="container">
-        <section class="intro">
+        <section class="intro" id="home-intro">
             <h1><span class="hello">Hello!</span></h1>
             <p>My name is <b>Tony</b>.</p>
             <p>I am an engineer with 8 years of experience making things and making things better.<br><br>
@@ -86,7 +85,7 @@
     </main>
 
     <footer>
-        <a class="gen-link footnote" href="#">&copy; Tony Carpenetti 
+        <a class="gen-link footnote" id=home-footnote href="#">&copy; Tony Carpenetti
             <script>document.write(new Date().getFullYear());</script>
         </a>
     </footer>
