@@ -1,43 +1,138 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-/* .container: The main wrapper for content with relative positioning and padding for footer */
-.container {
-    position: relative;   /* Allows for absolute positioning of child elements */
-    min-height: calc(100svh - 8.8em);
-    flex: 1;   /* Grow to fill available space */
-    /* padding-bottom: 2em; */
+html {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
 }
 
-/* #footer: Footer styles with margin and color settings. 
-Still trying to optimize stickiness and placement of this. */
-#footer {
+li{
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+a:hover {
+    color: rgb(131, 202, 253);
+}
+
+nav {
+    height: 3.5em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding: 0 .7rem;
+}
+
+.logo {
+    margin-right: auto;
+}
+
+nav .links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+nav .toggle_btn {
+    color: black;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.action_btn {
+    background-color: rgb(131, 202, 253);
+    color: black;
+    padding: .5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 14px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale .2s ease;
+}
+
+.action_btn:hover {
+    scale: 1.05;
+    color: black;
+}
+
+.action_btn:active {
+    scale: 0.95;
+}
+
+.dropdown_menu {
     position: absolute;
-    margin: 0 0 10px 16px;
-    font-size: 1.1em;
-    /* bottom: -1.7em; */
-    padding: .8em 0 14px 0;
-    /* Padding above footer...
-    *** This padding is only needed because the background repeats otherwise :( */
-    z-index: -3;
+    top: 60px;
+    right: 2rem;
+    height: 0;
+    width: 210px;
+    background: rgba(255, 255, 255, 0.26);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 2;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open {
+    height: 222px;
+    padding: 5px 0;
+}
+
+.dropdown_menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_menu .action_btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-icon {
+  width: 24px;
+  height: 24px;
+  fill: black;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 /* body: Main body styles including background image and text settings */
-body{
-    /* background-color: rgb(20,20,20); */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
     background-color: black;
     background-image: url('/images/swing-bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center calc(100% + 4.8em);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1em;
-    margin: 0;
-    min-height: fit-content;   /* Trying to fix repeating image issue */
     color: white;
     scroll-behavior: smooth;
-    display: flex;   /* Using flexbox layout */
-    flex-direction: column;   /* Stack children vertically */
-    /* height: 100vh; */
+}
+
+main.container {
+    flex: 1; /* This expands to fill leftover space between header and footer */
+    position: relative;
+}
+
+footer {
+    text-align: left;
+    font-size: 1.1em;
+    padding: .8em 0 14px 16px;
+    z-index: 1;
 }
 
 /* header: Not extremely happy with the gray background and offset of the 
@@ -61,7 +156,7 @@ header {
     font-weight: bold;
 }
 .footnote:link, .footnote:visited {
-    color: black;
+    color: rgb(0, 0, 0);
 }
 .gen-link:hover {
     color: rgb(131, 202, 253);
@@ -73,7 +168,7 @@ header {
 /* .intro: "Hello!" section */
 .intro {
     text-align: center;
-    font-size: 1.2rem;   /* Larger font size than default */
+    font-size: 1.1rem;   /* Larger font size than default */
     position: relative;
     margin: 5% 10% 0 45%;
     padding: 1rem;
@@ -150,6 +245,21 @@ Specifically in the media query section though */
 
 
 @media (max-width: 960px) {
+
+    nav .links,
+    nav .action_btn {
+        display: none;
+    }
+
+    nav .toggle_btn {
+        display: block
+    }
+
+    .dropdown_menu {
+        display: block;
+    }
+
+
     body {
         background-size: cover;
         background-position-y: 4.8em;

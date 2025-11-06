@@ -16,7 +16,7 @@ a:hover {
     color: rgb(131, 202, 253);
 }
 
-.navbar {
+nav {
     height: 3.5em;
     display: flex;
     align-items: center;
@@ -29,13 +29,13 @@ a:hover {
     margin-right: auto;
 }
 
-.navbar .links {
+nav .links {
     display: flex;
     gap: 2rem;
     align-items: center;
 }
 
-.navbar .toggle_btn {
+nav .toggle_btn {
     color: black;
     font-size: 1.5rem;
     cursor: pointer;
@@ -110,19 +110,19 @@ a:hover {
 
 
 /* Style the navigation menu * /
-.navbar {
+nav {
   overflow: hidden;
   background-color: #white;
   position: relative;
 }
 
 /* Hide the links inside the navigation menu (except for logo/home) * / 
-.navbar #myLinks {
+nav #myLinks {
   display: none;
 }
 
 /* Style navigation menu links * /
-.navbar a {
+nav a {
   color: white;
   padding: 14px 16px;
   text-decoration: none;
@@ -131,7 +131,7 @@ a:hover {
 }
 
 /* Style the hamburger menu * /
-.navbar a.icon {
+nav a.icon {
   background: black;
   display: block;
   position: absolute;
@@ -140,7 +140,7 @@ a:hover {
 }
 
 /* Add a grey background color on mouse-over * /
-.navbar a:hover {
+nav a:hover {
   background-color: #ddd;
   color: black;
 }
@@ -244,12 +244,12 @@ body.fly-in {
 
 @media (max-width: 960px) {
 
-    .navbar .links,
-    .navbar .action_btn {
+    nav .links,
+    nav .action_btn {
         display: none;
     }
 
-    .navbar .toggle_btn {
+    nav .toggle_btn {
         display: block
     }
 
