@@ -134,7 +134,7 @@ body.fly-in {
     background-position: right top, left calc(100% + 4.8em); /* Final position */
 }
 
-main.container {
+main {
     flex: 1; /* This expands to fill leftover space between header and footer */
     position: relative;
 }
