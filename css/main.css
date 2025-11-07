@@ -210,8 +210,8 @@ footer {
     display: block;
     z-index: 1;
     border-radius: 200px;
-    max-width: 300px;
-    margin: -300px 10% 0;
+    max-width: 400px;
+    margin: -350px calc(25vw - 200px) auto;
 }
 
 /* .swing: Would like to align this better with the swing in the background image 
@@ -221,7 +221,7 @@ Specifically in the media query section though */
     position: relative;
     width: 80%;
     max-width: 600px;
-    margin: 18vh 18vw auto;
+    margin: 18vh calc(25vw - 130px) auto;
     z-index: 4;
     color: white;
 }
@@ -341,7 +341,7 @@ Specifically in the media query section though */
     }
 
     #home-intro, .intro {
-        margin: 8% 10% 25%;
+        margin: 8% 10% 15%;
     }
 
     .headshot-section {

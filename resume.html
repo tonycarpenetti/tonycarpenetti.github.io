@@ -6,39 +6,95 @@
     <title>Tony Carpenetti</title>
     <meta name="author" content="Tony">
     <meta property="og:image" content="/images/tdc-solo-logo.png">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="/css/main.css">
     <link rel="icon" type="image/png" href="/tdc-favicon-light.png" media="(prefers-color-scheme: light)">
     <link rel="icon" type="image/png" href="/tdc-favicon-dark.png" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
     <header class="header">
-        <a href="tonycarpenetti.github.io"><img class="tdc-logo" src="/images/tony-carpenetti-logo_5.png" alt="TDC"></a>
+        <nav>
+            <div class="logo">
+                <a href="https://tonycarpenetti.github.io">
+                    <img class="tdc-logo" src="/images/tony-carpenetti-logo_1.png" alt="TDC">
+                </a>
+            </div>
+            <ul class="links">
+                <li><a href="https://tonycarpenetti.github.io">Home</a></li>
+                <!-- <li><a href="https://tonycarpenetti.github.io/resume">About</a></li> -->
+                <li><a href="https://tonycarpenetti.github.io/portfolio">Portfolio</a></li>
+                <li><a href="https://tonycarpenetti.github.io/resume">Resume</a></li>
+                <li><a href="https://tonycarpenetti.github.io/blog">Blog</a></li>
+            </ul>
+            <a href="#" class="action_btn">Contact</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+                <!-- <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 
+                            14.3 32 32s-14.3 32-32 32H32C14.3 
+                            128 0 113.7 0 96zm0 160c0-17.7 14.3-32 
+                            32-32H416c17.7 0 32 14.3 32 
+                            32s-14.3 32-32 32H32c-17.7 
+                            0-32-14.3-32-32zm0 160c0-17.7 
+                            14.3-32 32-32H416c17.7 0 32 
+                            14.3 32 32s-14.3 32-32 
+                            32H32c-17.7 0-32-14.3-32-32z"/>
+                </svg> -->
+            </div>
+            <div class="dropdown_menu">
+                <li><a href="https://tonycarpenetti.github.io">Home</a></li>
+                <!-- <li><a href="https://tonycarpenetti.github.io/resume">About</a></li> -->
+                <li><a href="https://tonycarpenetti.github.io/portfolio">Portfolio</a></li>
+                <li><a href="https://tonycarpenetti.github.io/resume">Resume</a></li>
+                <li><a href="https://tonycarpenetti.github.io/blog">Blog</a></li>
+                <li><a href="#" class="action_btn">Contact</a></li>
+            </div>
+        </nav>
+
     </header>
 
-    <div class="container">
-        <div id="content-wrap">
-            <section class="intro">
-                <h1><span class="hello">Welcome to my resume!</span></h1>
-                <p>Please feel free to visit my Linkedin page using this link:</p>
-                <p><a class="gen-link" href="https://linkedin.com/in/tonycarpenetti" target=_blank>My Linkedin Page</a></li></p>
-                <p>Click on the resume image below to open as a pdf:</p>
-            </section>
-            <section class="resume" style="text-align:center;">
-            <a id="resume-link" href="/images/Tony-Carpenetti-Resume_10-23-25.pdf" target="_blank">
-                <img id="resume-thumbnail"
-                    src="/images/resume-thumbnail_10-23-25.png"
-                    alt="Resume Preview"
-                    style="max-width:90%; border:1px solid #ccc; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
-            </a>
-            </section>
-            <footer id="footer">
-                <a class="gen-link footnote" href="tonycarpenetti.github.io">&copy; 
-                    Tony Carpenetti <script>document.write(new Date().getFullYear());</script></a>
-            </footer>
-        </div>
-    </div>
+    <script>
+    const toggleBtn = document.querySelector('.toggle_btn')
+    const toggleBtnIcon = document.querySelector('.toggle_btn i')
+    const dropDownMenu = document.querySelector('.dropdown_menu')
+
+    toggleBtn.onclick = function () {
+        dropDownMenu.classList.toggle('open')
+        const isOpen = dropDownMenu.classList.contains('open')
+
+        toggleBtnIcon.classList = isOpen
+        ? 'fa-solid fa-xmark'
+        : 'fa-solid fa-bars'
+    };
+    </script>
+
+    <main>
+        <section class="intro">
+            <h1><span class="hello">Welcome to my resume!</span></h1>
+            <p>Please feel free to visit my Linkedin page using this link:</p>
+            <p><a class="gen-link" href="https://linkedin.com/in/tonycarpenetti" target=_blank>My Linkedin Page</a></li></p>
+            <p>Click on the resume image below to open as a pdf:</p>
+        </section>
+        <section class="resume" style="text-align:center;">
+        <a id="resume-link" href="/images/Tony-Carpenetti-Resume_10-23-25.pdf" target="_blank">
+            <img id="resume-thumbnail"
+                src="/images/resume-thumbnail_10-23-25.png"
+                alt="Resume Preview"
+                style="max-width:90%; border:1px solid #ccc; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+        </a>
+        </section>
+    </main>
+
+    <footer>
+        <a class="gen-link footnote" href="#">&copy; Tony Carpenetti
+            <script>document.write(new Date().getFullYear());</script>
+        </a>
+    </footer>
+
     <script src="/js/automation.js"></script>
+    
 </body>
 </html>
