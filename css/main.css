@@ -211,7 +211,7 @@ footer {
     z-index: 1;
     border-radius: 200px;
     max-width: 400px;
-    margin: -350px calc(25vw - 200px) auto;
+    margin: calc(-40vh + 1%) calc(25vw - 200px) auto;
 }
 
 /* .swing: Would like to align this better with the swing in the background image 
