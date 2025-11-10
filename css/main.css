@@ -5,12 +5,13 @@ html {
     font-size: 1rem;
 }
 
-li{
+li {
     list-style: none;
 }
 
 a {
     text-decoration: none;
+    padding: 1px 1px;
     color: black;
     font-weight: bold;
 }
@@ -30,6 +31,10 @@ nav {
 
 .logo {
     margin-right: auto;
+}
+
+.logo:hover {
+    scale: 1.02;
 }
 
 nav .links {
@@ -58,7 +63,7 @@ nav .toggle_btn {
     transition: scale .2s ease;
 }
 
-.header_btn a {
+.header_btn a, a {
     color: black;
     padding: .6rem 1rem;
 }
@@ -134,10 +139,11 @@ body {
     min-height: 100vh;
     margin: 0;
     background-color: black;
-    background-repeat: no-repeat;
+
     scroll-behavior: smooth;
     background-image: url('/images/light-nobg.png'), url('/images/lion-solo.jpg');
     background-size: 960px;
+    background-repeat: no-repeat;
     background-position: right -30vh, left calc(100% + 70vh); /* Initial position */
     transition: background-position 2s ease-in-out;
 }
@@ -151,6 +157,28 @@ body {
 
 body.fly-in {
     background-position: right top, left calc(100% + 4.8em); /* Final position */
+}
+
+.stars-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.star {
+  position: absolute;
+  background: white; /* Color of the stars */
+  border-radius: 50%; /* Makes the stars circular */
+  opacity: 0.8; /* Initial opacity */
+  animation: twinkle 2s infinite ease-in-out; /* Apply the twinkle animation */
+}
+
+/* Keyframes for the twinkling animation */
+@keyframes twinkle {
+  0%, 100% {opacity: 0.8;}
+  50% {opacity: 0.3;}
 }
 
 main {
@@ -238,6 +266,8 @@ footer {
     z-index: 1;
     border-radius: 200px;
     max-width: 400px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     /* margin: -350px calc(25vw - 200px) auto; */
     /* margin: 5vh auto; */
 }
@@ -271,7 +301,8 @@ footer {
 .content-wrap {
     display: flex;
     flex-wrap: wrap-reverse;
-    gap: 10vh 3vw;
+    justify-content: space-evenly;
+    gap: 10vh 1vw;
     margin: 8vh 2vw;
 }
 
@@ -382,6 +413,8 @@ Specifically in the media query section though */
     z-index: -1;
 }
 
+
+
 @media (max-width: 960px) {
 
     nav .links,
@@ -415,7 +448,7 @@ Specifically in the media query section though */
     .tonyheadshot {
         position: relative;
         max-width: 45vw;
-        min-width: 200px;
+        min-width: 300px;
         margin: 0 auto;
     }
 
