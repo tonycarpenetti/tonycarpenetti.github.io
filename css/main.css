@@ -34,7 +34,7 @@ nav {
 
 nav .links {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     align-items: center;
 }
 
@@ -58,12 +58,28 @@ nav .toggle_btn {
     transition: scale .2s ease;
 }
 
-.action_btn:hover {
+.header_btn a {
+    color: black;
+    padding: .6rem 1rem;
+}
+
+.action_btn:hover, .intro_btn:hover, .header_btn:hover, .dropdown_btn:hover {
     scale: 1.05;
     color: black;
 }
 
-.action_btn:active {
+.header_btn:hover {
+    border-radius: 14px;
+    outline: 1px solid rgb(179, 179, 179);
+    outline-offset: 7px;
+}
+
+.dropdown_btn:hover {
+    border-radius: 6px;
+    backdrop-filter: blur(1px);
+}
+
+.action_btn:active, .intro_btn:active, .header_btn:active, .dropdown_btn:active {
     scale: 0.95;
 }
 
@@ -75,25 +91,28 @@ nav .toggle_btn {
     width: 210px;
     background: rgba(255, 255, 255, 0.26);
     backdrop-filter: blur(15px);
-    border-radius: 10px;
+    border-radius: 14px;
     overflow: hidden;
     z-index: 2;
     transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .dropdown_menu.open {
-    height: 222px;
-    padding: 10px 0;
+    height: auto;
+    padding: .7rem;
 }
 
-.dropdown_menu li {
-    padding: 0.7rem;
+.dropdown_menu.open li {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.dropdown_menu .action_btn {
+.dropdown_menu.open a {
+    padding: 1rem;
+}
+
+.dropdown_menu .action_btn, .dropdown_menu .dropdown_btn {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -181,10 +200,14 @@ footer {
 
 /* .intro: "Hello!" section */
 .intro {
+    /* display: grid;
+    place-items: center; */
+
     text-align: center;
+    /* justify-content: center; */
     font-size: 1.1rem;   /* Larger font size than default */
     position: relative;
-    padding: 1rem;
+    padding: 3vh 3vw;;
     z-index: 1;
     color: white;
     margin: 5vh 15vw 25vh;
@@ -192,7 +215,10 @@ footer {
 
 /* Shift "Intro" section to the right on home page */
 #home-intro {
-    margin: 5% 10% 0 45%;
+    /* margin: 5% 10% 0 45%; */
+    margin: auto;
+    padding: 3vh 3vw 5vh;
+    order: 1;
 }
 
 /* Pseudo-element for the .intro to create a background effect */
@@ -203,16 +229,52 @@ footer {
     background: linear-gradient(black,black,rgba(31, 31, 31, 0.699));
     z-index: -1;
     inset: 0;   /* Stretch to cover parent */
+    margin: 2vh auto;
 }
 
 /* Might switch out with newer image at some point */
 .tonyheadshot {
-    display: block;
+    /* display: block; */
     z-index: 1;
     border-radius: 200px;
     max-width: 400px;
-    margin: calc(-40vh + 1%) calc(25vw - 200px) auto;
+    /* margin: -350px calc(25vw - 200px) auto; */
+    /* margin: 5vh auto; */
 }
+
+.headshot-section {
+    margin: 2vh auto;
+    padding: 0 2vw;
+    /* align-self: flex-start; */
+}
+
+.intro_btn, .intro_btn a {
+    color: rgb(131, 202, 253);
+    padding: .5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 14px;
+    margin: 15px auto;
+}
+
+#intro-action_btn, #intro-action_btn a {
+    background-color: rgb(131, 202, 253);
+    color: black
+}
+
+.container {
+    display: flex;
+    margin: auto 10%;
+    flex-wrap: wrap;
+}
+
+.content-wrap {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    gap: 10vh 3vw;
+    margin: 8vh 2vw;
+}
+
 
 /* .swing: Would like to align this better with the swing in the background image 
 Specifically in the media query section though */
@@ -327,11 +389,7 @@ Specifically in the media query section though */
         display: none;
     }
 
-    nav .toggle_btn {
-        display: block
-    }
-
-    .dropdown_menu {
+    nav .toggle_btn, .dropdown_menu {
         display: block;
     }
     
@@ -340,8 +398,10 @@ Specifically in the media query section though */
         bottom: .1rem;
     }
 
-    #home-intro, .intro {
-        margin: 8% 10% 15%;
+    .intro {
+        /* margin: 8% 10% 15%; */
+        margin: 5vh 3vw 15vh;
+        padding: 3vh 6vw;
     }
 
     .headshot-section {
@@ -355,6 +415,7 @@ Specifically in the media query section though */
     .tonyheadshot {
         position: relative;
         max-width: 45vw;
+        min-width: 200px;
         margin: 0 auto;
     }
 

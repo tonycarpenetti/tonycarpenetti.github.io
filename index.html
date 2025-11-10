@@ -27,11 +27,11 @@
                 </a>
             </div>
             <ul class="links">
-                <li><a href="https://tonycarpenetti.github.io">Home</a></li>
-                <!-- <li><a href="https://tonycarpenetti.github.io/resume">About</a></li> -->
-                <li><a href="https://tonycarpenetti.github.io/portfolio">Portfolio</a></li>
-                <li><a href="https://tonycarpenetti.github.io/resume">Resume</a></li>
-                <li><a href="https://tonycarpenetti.github.io/blog">Blog</a></li>
+                <li class="header_btn"><a href="https://tonycarpenetti.github.io">Home</a></li>
+                <!-- <li class="header_btn"><a href="https://tonycarpenetti.github.io/resume">About</a></li> -->
+                <li class="header_btn"><a href="https://tonycarpenetti.github.io/portfolio">Portfolio</a></li>
+                <li class="header_btn"><a href="https://tonycarpenetti.github.io/resume">Resume</a></li>
+                <li class="header_btn"><a href="https://tonycarpenetti.github.io/blog">Blog</a></li>
             </ul>
             <a href="mailto:carpenetti2013@gmail.com" class="action_btn">Contact</a>
             <div class="toggle_btn">
@@ -49,15 +49,14 @@
                 </svg> -->
             </div>
             <div class="dropdown_menu">
-                <li><a href="https://tonycarpenetti.github.io">Home</a></li>
-                <!-- <li><a href="https://tonycarpenetti.github.io/resume">About</a></li> -->
-                <li><a href="https://tonycarpenetti.github.io/portfolio">Portfolio</a></li>
-                <li><a href="https://tonycarpenetti.github.io/resume">Resume</a></li>
-                <li><a href="https://tonycarpenetti.github.io/blog">Blog</a></li>
-                <li><a href="#" class="action_btn">Contact</a></li>
+                <li><a href="https://tonycarpenetti.github.io" class="dropdown_btn">Home</a></li>
+                <!-- <li class="header_btn"><a href="https://tonycarpenetti.github.io/resume" class="dropdown_btn">About</a></li> -->
+                <li><a href="https://tonycarpenetti.github.io/portfolio" class="dropdown_btn">Portfolio</a></li>
+                <li><a href="https://tonycarpenetti.github.io/resume" class="dropdown_btn">Resume</a></li>
+                <li><a href="https://tonycarpenetti.github.io/blog" class="dropdown_btn">Blog</a></li>
+                <li><a href="mailto:carpenetti2013@gmail.com" class="action_btn">Contact</a></li>
             </div>
         </nav>
-
     </header>
 
     <script>
@@ -76,21 +75,26 @@
     </script>
 
     <main>
-        <section class="intro" id="home-intro">
+        <div class="content-wrap">
+            <section class="intro" id="home-intro">
             <h1><span class="hello">Hello!</span></h1>
-            <p>My name is <b>Tony</b>.</p>
-            <p>I am an engineer with 8 years of experience making things and making things better.<br><br>
-                <!-- I am a husband, a father, and a follower of Jesus.<br><br> -->
-                Please feel free to roam this website which I built using HTML, CSS, and JavaScript.<br>
-                <!-- It is hosted with Github Pages and has been a project just by itself!<br></p> -->
-            <p><a class="gen-link" href="https://tonycarpenetti.github.io/portfolio"><br>Portfolio</a></p>
-            <p><a class="gen-link" href="https://tonycarpenetti.github.io/resume">Resume</a></p>
-            <p><a class="gen-link" href="https://tonycarpenetti.github.io/blog">Blog</a></p>
-        </section>
+                <p>My name is <b>Tony</b>.</p>
+                <p>I am an engineer with 8 years of experience making things and making things better.<br><br>
+                    <!-- I am a husband, a father, and a follower of Jesus.<br><br> -->
+                    Please feel free to roam this website which I built using HTML, CSS, and JavaScript.<br>
+                    <!-- It is hosted with Github Pages and has been a project just by itself!<br></p> -->
+            <div class="container">
+                <p class="intro_btn"><a href="https://tonycarpenetti.github.io/portfolio">Portfolio</a></p>
+                <p class="intro_btn"><a href="https://tonycarpenetti.github.io/resume">Resume</a></p>
+                <p class="intro_btn"><a href="https://tonycarpenetti.github.io/blog">Blog</a></p>
+                <p class="intro_btn" id="intro-action_btn"><a href="mailto:carpenetti2013@gmail.com">Contact</a></p>
+            </div>
+            </section>
 
-        <section class="headshot-section">
-            <img class="tonyheadshot" src="/images/tony-face.jpg" alt="Picture of Tony Carpenetti">
-        </section>
+            <section class="headshot-section">
+                <img class="tonyheadshot" src="/images/tony-face.jpg" alt="Picture of Tony Carpenetti">
+            </section>
+        </div>
 
         <section class="swing">
             <p>Thanks for <span class="swinging">swinging</span> by!</p>
