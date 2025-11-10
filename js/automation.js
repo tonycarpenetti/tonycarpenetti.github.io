@@ -12,5 +12,5 @@ window.addEventListener("DOMContentLoaded", () => {
   const thumbnail = document.getElementById("resume-thumbnail");
 
   if (link) link.href = `/images/Tony-Carpenetti-Resume_${resumeDate}.pdf`;
-  if (thumbnail) thumbnail.src = `/images/resume-thumbnail_${resumeDate}.jpg`;
+  if (thumbnail) thumbnail.src = `/images/resume-thumbnail_${resumeDate}.png`;
 });
