@@ -167,6 +167,10 @@ body.fly-in {
     z-index: -1;
 }
 
+#home-body .stars-container {
+    display: none;
+}
+
 .star {
   position: absolute;
   background: white; /* Color of the stars */
@@ -448,8 +452,8 @@ Specifically in the media query section though */
     but gets a little too small when on thinner screen at 40vh */
     .tonyheadshot {
         position: relative;
-        max-width: 55vw;
-        min-width: 50vw;
+        max-width: calc(45vw + 50px);
+        min-width: 45vw;
         margin: 0 auto;
     }
 
