@@ -264,8 +264,8 @@ footer {
 .tonyheadshot {
     /* display: block; */
     z-index: 1;
-    border-radius: 200px;
-    max-width: 400px;
+    border-radius: 400px;
+    max-width: calc(400px + 5vw);
     padding: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     /* margin: -350px calc(25vw - 200px) auto; */
@@ -304,6 +304,7 @@ footer {
     justify-content: center;
     gap: 10vh 1vw;
     margin: 8vh 2vw;
+    
 }
 
 
@@ -447,8 +448,8 @@ Specifically in the media query section though */
     but gets a little too small when on thinner screen at 40vh */
     .tonyheadshot {
         position: relative;
-        max-width: 45vw;
-        min-width: 300px;
+        max-width: 55vw;
+        min-width: 50vw;
         margin: 0 auto;
     }
 
