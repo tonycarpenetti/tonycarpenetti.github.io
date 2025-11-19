@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tony Carpenetti</title>
+    <meta name="author" content="Tony">
+    <meta property="og:image" content="/images/tdc-solo-logo.png">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="icon" type="image/png" href="/tdc-favicon-light.png" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/png" href="/tdc-favicon-dark.png" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="https://tonycarpenetti.github.io">
+                    <img class="tdc-logo" src="/images/tony-carpenetti-logo_1.png" alt="TDC">
+                </a>
+            </div>
+            <ul class="links">
+                <li class="header_btn"><a href="https://tonycarpenetti.github.io">Home</a></li>
+                <!-- <li class="header_btn"><a href="https://tonycarpenetti.github.io/resume">About</a></li> -->
+                <li class="header_btn"><a href="https://tonycarpenetti.github.io/portfolio">Portfolio</a></li>
+                <li class="header_btn"><a href="https://tonycarpenetti.github.io/resume">Resume</a></li>
+                <li class="header_btn"><a href="https://tonycarpenetti.github.io/blog">Blog</a></li>
+            </ul>
+            <a href="mailto:carpenetti2013@gmail.com" class="action_btn">Contact</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+                <!-- <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 
+                            14.3 32 32s-14.3 32-32 32H32C14.3 
+                            128 0 113.7 0 96zm0 160c0-17.7 14.3-32 
+                            32-32H416c17.7 0 32 14.3 32 
+                            32s-14.3 32-32 32H32c-17.7 
+                            0-32-14.3-32-32zm0 160c0-17.7 
+                            14.3-32 32-32H416c17.7 0 32 
+                            14.3 32 32s-14.3 32-32 
+                            32H32c-17.7 0-32-14.3-32-32z"/>
+                </svg> -->
+            </div>
+            <div class="dropdown_menu">
+                <li><a href="https://tonycarpenetti.github.io" class="dropdown_btn">Home</a></li>
+                <!-- <li class="header_btn"><a href="https://tonycarpenetti.github.io/resume" class="dropdown_btn">About</a></li> -->
+                <li><a href="https://tonycarpenetti.github.io/portfolio" class="dropdown_btn">Portfolio</a></li>
+                <li><a href="https://tonycarpenetti.github.io/resume" class="dropdown_btn">Resume</a></li>
+                <li><a href="https://tonycarpenetti.github.io/blog" class="dropdown_btn">Blog</a></li>
+                <li><a href="mailto:carpenetti2013@gmail.com" class="action_btn">Contact</a></li>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Temporarily disable stars -->
+    <div class="stars-container"></div>
+
+    <script>
+    const toggleBtn = document.querySelector('.toggle_btn')
+    const toggleBtnIcon = document.querySelector('.toggle_btn i')
+    const dropDownMenu = document.querySelector('.dropdown_menu')
+
+    toggleBtn.onclick = function () {
+        dropDownMenu.classList.toggle('open')
+        const isOpen = dropDownMenu.classList.contains('open')
+
+        toggleBtnIcon.classList = isOpen
+        ? 'fa-solid fa-xmark'
+        : 'fa-solid fa-bars'
+    };
+    </script>
+
+    <!-- Temporarily disable background -->
+    <style>
+        /* body{background-image: none;} */
+        /* main{min-height: 1100px;} */
+    </style>
+
+    <main>
+        <section class="intro">
+            <!-- ----------------------------------JOGGER------------------------------------------ -->
+            <div class="qm-wrapper">
+            <div class="qm-move">
+                <div class="qm-rotate">
+                <div class="qm-scale">
+                    <svg class="qm" viewBox="0 0 100 140" xmlns="http://www.w3.org/2000/svg">
+                    <text x="50" y="90" text-anchor="middle" font-size="100" font-family="Arial" fill="white">?</text>
+                    </svg>
+                </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="text-wrapper">
+            <h1><span class="hello">Memory Jogger</span></h1>
+            <p>A way to remember what you almost forgot.</p>
+            </div>
+            <!-- ----------------------------------JOGGER------------------------------------------ -->
+        </section>
+        <section class="website-example">
+            
+            <div class="memory-intro">
+                <div class="memory-image">
+                    <img src="/images/ABC-memory-white.png" id="memory-icon">
+                </div>
+                <div class="memory-text">
+                    <p><b>Memory Jogger</b> follows the "<a href="https://www.merriam-webster.com/dictionary/abecedarius" target=_blank class="info">Abecedarius</a>
+                    " mneumonic acronym technique to help you remember something.
+                    <br>It goes through each letter of the alphabet one letter at a time giving example words to jog your memory.</p>
+                    <p>If you know what letter the thing you're trying to remember starts with, you can select it below.<br>Otherwise, go down to "START."</p>
+                    <p>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</p>
+                </div>
+            </div>
+            <div class="memory-jogger">
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <a class="gen-link footnote"href="https://tonycarpenetti.github.io">
+            &copy; Tony Carpenetti <script>document.write(new Date().getFullYear());</script>
+        </a>
+    </footer>
+
+    <script src="/js/automation.js"></script>
+</body>
+</html>

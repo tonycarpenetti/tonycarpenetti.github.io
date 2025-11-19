@@ -11,9 +11,10 @@ li {
 
 a {
     text-decoration: none;
-    padding: 1px 1px;
+    /* padding: 1px 1px; */
     color: black;
     font-weight: bold;
+    font-size: 1rem;
 }
 
 a:hover {
@@ -63,7 +64,7 @@ nav .toggle_btn {
     transition: scale .2s ease;
 }
 
-.header_btn a, a {
+.header_btn a {
     color: black;
     padding: .6rem 1rem;
 }
@@ -142,7 +143,7 @@ body {
 
     scroll-behavior: smooth;
     background-image: url('/images/light-nobg.png'), url('/images/lion-solo.jpg');
-    background-size: 960px;
+    background-size: 960px, 600px;
     background-repeat: no-repeat;
     background-position: right -30vh, left calc(100% + 70vh); /* Initial position */
     transition: background-position 2s ease-in-out;
@@ -207,7 +208,7 @@ header {
 footer {
     text-align: left;
     font-size: 1.1em;
-    padding: .8em 0 14px 16px;
+    padding: 12em 0 14px 16px;
     z-index: 1;
 }
 
@@ -216,7 +217,7 @@ footer {
     text-decoration: none;
     color: rgb(89, 187, 248);
     font-weight: bold;}
-.gen-link:hover {
+.gen-link:hover, .website-example a:hover {
     color: rgb(131, 202, 253);}
 
 .footnote:link, .footnote:visited {
@@ -242,7 +243,7 @@ footer {
     padding: 3vh 3vw;;
     z-index: 1;
     color: white;
-    margin: 5vh 15vw 25vh;
+    margin: 5vh 15vw 20vh;
 }
 
 /* Shift "Intro" section to the right on home page */
@@ -359,12 +360,16 @@ Specifically in the media query section though */
 .website-example {
     position: relative;
     margin: 3%;
-    padding: 1rem;
-    padding-top: 21px;
+    padding: 21px;
     z-index: 0;
     color: white;
     overflow: hidden;
     border-radius: 35px;
+}
+
+.website-example a {
+    color: white;
+    font-weight: normal;
 }
 
 /* Pseudo-element for the .intro to create a background effect */
@@ -384,7 +389,7 @@ Specifically in the media query section though */
     right: 0;
     top: 0; /* adjust to align with image top if needed */
     width: 120px; /* gradient width */
-    height: 623px; /* same as your image max-height */
+    height: 623px; /* same as max image height */
 
     background: linear-gradient(to left, rgba(0,0,0,0.85), rgba(0,0,0,0));
     pointer-events: none;
@@ -392,7 +397,7 @@ Specifically in the media query section though */
 }
 
 #hibana-example::after {
-    height: 180px; /* same as your image max-height */
+    height: 180px; /* same as max image height */
 }
 
 .wide-image {
@@ -417,6 +422,100 @@ Specifically in the media query section though */
     inset: 33px;
     z-index: -1;
 }
+
+#memory-icon {
+    max-width: 120px;
+    position: relative;
+    display: block;
+    flex-wrap: nowrap;
+}
+
+.memory-intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.memory-jogger {
+    min-height: 100px;
+}
+
+
+
+/* --------------------------------------- JOGGER --------------------------------------------- */
+
+.qm-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 150px;
+  margin: 30px 0 0 -40px;
+  overflow: hidden;
+  background: transparent;
+  z-index: 1; /* behind text */
+}
+
+.qm-move {
+  position: absolute;
+  left: -200px;
+  top: 10px;
+  animation: moveAcross 10s linear infinite;
+}
+@keyframes moveAcross {
+  0%   { left: -200px; }
+  100% { left: 100%; }
+}
+
+.qm-rotate {
+  animation: rotateWobble 2.6s ease-in-out infinite;
+  transform-origin: center;
+}
+@keyframes rotateWobble {
+  0%   { transform: rotate(-12deg); }
+  50%  { transform: rotate(12deg); }
+  100% { transform: rotate(-12deg); }
+}
+
+.qm-scale {
+  animation: growPulse 1.9s ease-in-out infinite;
+  transform-origin: center; 
+}
+@keyframes growPulse {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.25); }
+}
+
+.qm {
+  width: 120px;
+  height: auto;
+}
+
+/* ========================= */
+/* Text front-layer + blur   */
+/* ========================= */
+
+.text-wrapper {
+  position: relative;
+  z-index: 5;
+  width: fit-content;
+  margin: 2rem auto;
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  background: rgba(0,0,0,0.75); /* optional soft background */
+  
+  /* soft fading glow behind the text */
+  box-shadow: 0 0 10px 20px rgba(0,0,0,0.75);
+}
+
+.text-wrapper h1, 
+.text-wrapper p {
+  color: white;
+  text-align: center;
+  margin: 0.4rem 0;
+}
+
+
+/* --------------------------------------- JOGGER --------------------------------------------- */
 
 
 
@@ -467,14 +566,7 @@ Specifically in the media query section though */
         translate: -125px;
     }
 
-    body {
-        background-position: right -40vh, center calc(100% + 50vh);  /* Initial position for smaller screens */
-        transition: background-position 1.2s ease-out;
-    }
 
-    body.fly-in {
-        background-position: right top, center calc(100% + 4.8em); /* Final position for smaller screens */
-    }
 
     #christmas-tickets, .ticket {
         max-height: 400px;
@@ -490,9 +582,19 @@ Specifically in the media query section though */
 }
 
 
+
 @media (max-width: 400px) {
     .dropdown_menu {
         left: 2rem;
         width: unset;
+    }
+
+    body {
+        background-position: right -40vh, center calc(100% + 50vh);  /* Initial position for smaller screens */
+        transition: background-position 1.2s ease-out;
+    }
+
+    body.fly-in {
+        background-position: right top, center calc(100% + 4.8em); /* Final position for smaller screens */
     }
 }
