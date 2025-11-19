@@ -100,8 +100,7 @@
             </div>
             <!-- ----------------------------------JOGGER------------------------------------------ -->
         </section>
-        <section class="website-example">
-            
+        <section class="website-example" id="memory-example">
             <div class="memory-intro">
                 <div class="memory-image">
                     <img src="/images/ABC-memory-white.png" id="memory-icon">
@@ -109,14 +108,74 @@
                 <div class="memory-text">
                     <p><b>Memory Jogger</b> follows the "<a href="https://www.merriam-webster.com/dictionary/abecedarius" target=_blank class="info">Abecedarius</a>
                     " mneumonic acronym technique to help you remember something.
-                    <br>It goes through each letter of the alphabet one letter at a time giving example words to jog your memory.</p>
-                    <p>If you know what letter the thing you're trying to remember starts with, you can select it below.<br>Otherwise, go down to "START."</p>
-                    <p>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</p>
+                    <br><br>It goes through each letter of the alphabet one-at-a-time while giving example words to jog your memory.</p>
+                    <hr><p>Select the letter you think... whatever it is... starts with - or go down to "REMEMBER" if you're not sure.</p>
+                    <div class="letter-selector">
+                        <p>
+                            <span class="letter" data-letter="A">A</span>
+                            <span class="letter" data-letter="B">B</span>
+                            <span class="letter" data-letter="C">C</span>
+                            <span class="letter" data-letter="D">D</span>
+                            <span class="letter" data-letter="E">E</span>
+                            <span class="letter" data-letter="F">F</span>
+                            <span class="letter" data-letter="G">G</span>
+                            <span class="letter" data-letter="H">H</span>
+                            <span class="letter" data-letter="I">I</span>
+                            <span class="letter" data-letter="J">J</span>
+                            <span class="letter" data-letter="K">K</span>
+                            <span class="letter" data-letter="L">L</span>
+                            <span class="letter" data-letter="M">M</span>
+                            <span class="letter" data-letter="N">N</span>
+                            <span class="letter" data-letter="O">O</span>
+                            <span class="letter" data-letter="P">P</span>
+                            <span class="letter" data-letter="Q">Q</span>
+                            <span class="letter" data-letter="R">R</span>
+                            <span class="letter" data-letter="S">S</span>
+                            <span class="letter" data-letter="T">T</span>
+                            <span class="letter" data-letter="U">U</span>
+                            <span class="letter" data-letter="V">V</span>
+                            <span class="letter" data-letter="W">W</span>
+                            <span class="letter" data-letter="X">X</span>
+                            <span class="letter" data-letter="Y">Y</span>
+                            <span class="letter" data-letter="Z">Z</span>
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="memory-jogger">
+            </div> 
+            <div class="memory-jogger"> <!--- Enter HTML/Program here -->
+                <div class="memory-controls" style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-top: 20px;">
+                    <button id="remember-btn" class="remember-button">REMEMBER</button>
 
-            </div>
+                    <div id="letter-display" style="font-size: 2rem; padding: 10px 15px; width: 80px; height: 50px; text-align: center; display: flex; align-items: center; justify-content: center; background: black; color: #fff; border: 2px solid #fff; border-radius: 10px;">
+                        <!-- Letters appear here -->
+                    </div>
+
+                    <div class="control-buttons" style="display:flex; gap:10px;">
+                        <button id="pause-btn" class="control-btn">PAUSE</button>
+                        <button id="continue-btn" class="control-btn" style="display:none;">CONTINUE</button>
+                        <button id="stop-btn" class="stop-btn">STOP</button>
+                    </div>
+                    </div>
+
+                    <div class="slider-controls">
+
+                        <div class="arrows-row">
+                            <div class="arrow-block">
+                                <button id="prev-btn" class="arrow-btn">←</button>
+                                <div>PREVIOUS</div>
+                            </div>
+
+                            <div class="arrow-block">
+                                <button id="next-btn" class="arrow-btn">→</button>
+                                <div>NEXT</div>
+                            </div>
+                        </div>
+
+                        <input type="range" id="speed-slider" min="100" max="2000" value="1000" style="width: 300px;">
+                    </div>
+
+                </div>
+            </div> <!--- Enter HTML/Program here -->
         </section>
     </main>
 
