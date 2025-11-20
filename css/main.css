@@ -11,7 +11,6 @@ li {
 
 a {
     text-decoration: none;
-    /* padding: 1px 1px; */
     color: black;
     font-weight: bold;
     font-size: 1rem;
@@ -233,11 +232,7 @@ footer {
 
 /* .intro: "Hello!" section */
 .intro {
-    /* display: grid;
-    place-items: center; */
-
     text-align: center;
-    /* justify-content: center; */
     font-size: 1.1rem;   /* Larger font size than default */
     position: relative;
     padding: 3vh 3vw;;
@@ -248,7 +243,6 @@ footer {
 
 /* Shift "Intro" section to the right on home page */
 #home-intro {
-    /* margin: 5% 10% 0 45%; */
     margin: auto;
     padding: 3vh 3vw 5vh;
     order: 1;
@@ -267,20 +261,16 @@ footer {
 
 /* Might switch out with newer image at some point */
 .tonyheadshot {
-    /* display: block; */
     z-index: 1;
     border-radius: 400px;
     max-width: calc(400px + 5vw);
     padding: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-    /* margin: -350px calc(25vw - 200px) auto; */
-    /* margin: 5vh auto; */
 }
 
 .headshot-section {
     margin: 2vh auto;
     padding: 0 2vw;
-    /* align-self: flex-start; */
 }
 
 .intro_btn, .intro_btn a {
@@ -311,7 +301,6 @@ footer {
     margin: 8vh 2vw;
     
 }
-
 
 /* .swing: Would like to align this better with the swing in the background image 
 Specifically in the media query section though */
@@ -382,7 +371,6 @@ Specifically in the media query section though */
     inset: 0;   /* Stretch to cover parent */
 }
 
-/* Insert Code Here */
 .website-example::after {
     content: "";
     position: absolute;
@@ -426,8 +414,6 @@ Specifically in the media query section though */
 #memory-icon {
     max-width: 140px;
     position: relative;
-    /* display: block; */
-    /* margin-left: -2vw; */
 }
 
 .memory-intro {
@@ -435,8 +421,6 @@ Specifically in the media query section though */
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    /* flex-direction: column; */
-    /* gap: calc(50px - 90vw); */
     gap: 21px; 
 }
 @media (min-width: 1400px) {
@@ -458,12 +442,7 @@ Specifically in the media query section though */
 
 
 
-
-
-
-
-
-/* ---------------- Letters remain white ---------------- */
+/* ---------------- Memory Jogger Bottom Section ---------------- */
 .letter {
   cursor: pointer;
   padding: 0 5px;
@@ -542,8 +521,7 @@ button {
 
 
 /* ---------------- Memory Jogger Container ---------------- */
-.memory-controls,
-.slider-controls {
+.memory-controls, .slider-controls {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -552,7 +530,6 @@ button {
 }
 
 /* Desktop: slider in-between arrows */
-
 .slider-controls {
     flex-direction: row; /* horizontal */
     width: auto;
@@ -590,7 +567,7 @@ button {
 
 
 
-/* --------------------------------------- JOGGER --------------------------------------------- */
+/* --------------------------------------- QUESTION MARK --------------------------------------------- */
 
 .qm-wrapper {
   position: absolute;
@@ -637,10 +614,8 @@ button {
   height: auto;
 }
 
-/* ========================= */
-/* Text front-layer + blur   */
-/* ========================= */
 
+/* Text front-layer + blur   */
 .text-wrapper {
   position: relative;
   z-index: 5;
@@ -648,28 +623,21 @@ button {
   margin: 2rem auto;
   padding: 1.5rem 2rem;
   border-radius: 1rem;
-  background: rgba(0,0,0,0.75); /* optional soft background */
-  
-  /* soft fading glow behind the text */
+  background: rgba(0,0,0,0.75);
   box-shadow: 0 0 10px 20px rgba(0,0,0,0.75);
 }
 
-.text-wrapper h1, 
-.text-wrapper p {
+.text-wrapper h1, .text-wrapper p {
   color: white;
   text-align: center;
   margin: 0.4rem 0;
 }
 
 
-/* --------------------------------------- JOGGER --------------------------------------------- */
-
-
-
+/* --------------------------------------- MEDIA QUERIES --------------------------------------------- */
 @media (max-width: 960px) {
 
-    nav .links,
-    nav .action_btn {
+    nav .links, nav .action_btn {
         display: none;
     }
 
@@ -714,7 +682,6 @@ button {
     }
 
 
-
     #christmas-tickets, .ticket {
         max-height: 400px;
     }
@@ -741,12 +708,6 @@ button {
         0%   { left: -100px; } 
         100% { left: 100%; }
     }
-
-
-
-
-
-
 
 
 
@@ -778,8 +739,6 @@ button {
         grid-column: 3;
     }
 
-    
-
     .arrow-block {
         text-align: center;
     }
@@ -804,9 +763,7 @@ button {
 }
 
 
-
-
-
+/* ------------------------------------------------ 400px MEDIA QUERY ----------------------------------------- */
 @media (max-width: 400px) {
     .dropdown_menu {
         left: 2rem;
