@@ -158,20 +158,23 @@
                     </div>
 
                     <div class="slider-controls">
-
                         <div class="arrows-row">
                             <div class="arrow-block">
                                 <button id="prev-btn" class="arrow-btn">←</button>
                                 <div>PREVIOUS</div>
                             </div>
 
-                            <div class="arrow-block">
+                            <div class="arrow-block" id="next-block">
                                 <button id="next-btn" class="arrow-btn">→</button>
                                 <div>NEXT</div>
                             </div>
-                        </div>
 
-                        <input type="range" id="speed-slider" min="100" max="2000" value="1000" style="width: 300px;">
+                            <div class="slider-block">
+                                <input type="range" id="speed-slider" min="200" max="2000" value="1000" style="width: 200px;">
+                            </div>
+                        </div>
+                        
+                        
                     </div>
 
                 </div>

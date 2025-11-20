@@ -424,10 +424,10 @@ Specifically in the media query section though */
 }
 
 #memory-icon {
-    max-width: 120px;
+    max-width: 140px;
     position: relative;
-    display: block;
-    margin: 0 auto;
+    /* display: block; */
+    /* margin-left: -2vw; */
 }
 
 .memory-intro {
@@ -438,6 +438,13 @@ Specifically in the media query section though */
     /* flex-direction: column; */
     /* gap: calc(50px - 90vw); */
     gap: 21px; 
+}
+@media (min-width: 1400px) {
+    .memory-intro {
+        justify-content: left;
+        margin-left: 3vw;
+        gap: 5vw;
+    }
 }
 
 #memory-example::after {
@@ -521,13 +528,18 @@ button {
 /* Arrow buttons */
 .arrow-btn {
   padding: 8px 40px;
+  margin-bottom: 5px;
   font-size: 1.5rem;
   border-radius: 20px;
   border: none;
   background-color: #007BFF;
   color: white;
+  display: flex;
+  align-items: flex-end;
+  height: 40px;
 }
 .arrow-btn:hover { background-color: #0056b3; }
+
 
 /* ---------------- Memory Jogger Container ---------------- */
 .memory-controls,
@@ -540,27 +552,35 @@ button {
 }
 
 /* Desktop: slider in-between arrows */
-@media (min-width: 961px) {
-    .slider-controls {
-        flex-direction: row; /* horizontal */
-        width: auto;
-    }
 
-    .arrows-row {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        order: 0; /* prev + next arrows */
-    }
+.slider-controls {
+    flex-direction: row; /* horizontal */
+    width: auto;
+    margin-top: 20px;
+}
 
-    #speed-slider {
-        order: 1; /* slider in between arrows */
-        width: 300px; /* adjust as needed */
-    }
+.arrows-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    order: 0; /* prev + next arrows */
+}
 
-    .arrow-block {
-        text-align: center;
-    }
+#speed-slider {
+    order: 1; /* slider in between arrows */
+    width: 300px; /* adjust as needed */
+}
+
+.arrow-block {
+    text-align: center;
+}
+
+#next-block {
+    order: 2;
+}
+
+.slider-block {
+    margin-top: 8px;
 }
 
 
@@ -723,28 +743,42 @@ button {
     }
 
 
+
+
+
+
+
+
+
+    /* Use the same grid as desktop */
     .slider-controls {
-        flex-direction: column; /* stack vertically */
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 20px;
         width: 100%;
+        justify-items: center;
     }
 
     #speed-slider {
-        order: 0; /* slider first */
+        grid-column: 2; /* center column */
         width: 90%;
         max-width: 350px;
     }
 
     .arrows-row {
-        order: 1; /* arrows below slider */
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap; /* wrap if needed */
-        width: 100%;
+        display: contents; /* let children occupy grid cells */
     }
+
+    /* Arrows stay in columns 1 and 3 */
+    #prev-block {
+        grid-column: 1;
+    }
+
+    #next-block {
+        grid-column: 3;
+    }
+
+    
 
     .arrow-block {
         text-align: center;
@@ -757,10 +791,16 @@ button {
         gap: 16px;
         margin-bottom: 20px;
     }
-}
 
+    #letter-display {
+        order: -1;
+    }
 
-    
+    /* Move slider ABOVE the arrows */
+    .slider-block {
+        grid-column: 1 / 4; /* span all 3 columns */
+        order: -1;          /* moves it ABOVE arrow row */
+    }
 }
 
 
@@ -780,5 +820,21 @@ button {
 
     body.fly-in {
         background-position: right top, center calc(100% + 4.8em); /* Final position for smaller screens */
+    }
+
+    .slider-controls {
+        display: flex;
+        flex-direction: column; /* stack slider above arrows */
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        gap: 10px; /* optional spacing between slider and arrows */
+    }
+    
+    .arrows-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px; /* spacing between prev/next arrows */
     }
 }
