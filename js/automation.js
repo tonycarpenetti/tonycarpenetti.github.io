@@ -54,6 +54,7 @@ for (let i = 0; i < numStars; i++) {
   const prevBtn = document.getElementById('prev-btn');
   const nextBtn = document.getElementById('next-btn');
   const speedSlider = document.getElementById('speed-slider');
+  const letterNums = document.getElementById('letter-nums');
 
   // safety check
   if (!display || !rememberBtn || !pauseBtn || !continueBtn || !stopBtn || !prevBtn || !nextBtn || !speedSlider) {

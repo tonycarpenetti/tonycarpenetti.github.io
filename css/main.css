@@ -390,6 +390,10 @@ Specifically in the media query section though */
     z-index: 2; /* above background but below text */
 }
 
+#jogger-example::after {
+    height: 361px;
+}
+
 #hibana-example::after {
     height: 180px; /* same as max image height */
 }
