@@ -124,12 +124,12 @@ nav .toggle_btn {
 }
 
 .menu-icon {
-  width: 24px;
-  height: 24px;
-  fill: black;
-  cursor: pointer;
-  display: inline-block;
-  vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    fill: black;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 /* body: Main body styles including background image and text settings */
@@ -172,17 +172,17 @@ body.fly-in {
 }
 
 .star {
-  position: absolute;
-  background: white; /* Color of the stars */
-  border-radius: 50%; /* Makes the stars circular */
-  opacity: 0.8; /* Initial opacity */
-  animation: twinkle 2s infinite ease-in-out; /* Apply the twinkle animation */
+    position: absolute;
+    background: white; /* Color of the stars */
+    border-radius: 50%; /* Makes the stars circular */
+    opacity: 0.8; /* Initial opacity */
+    animation: twinkle 2s infinite ease-in-out; /* Apply the twinkle animation */
 }
 
 /* Keyframes for the twinkling animation */
 @keyframes twinkle {
-  0%, 100% {opacity: 0.8;}
-  50% {opacity: 0.3;}
+    0%, 100% {opacity: 0.8;}
+    50% {opacity: 0.3;}
 }
 
 main {
@@ -344,6 +344,11 @@ Specifically in the media query section though */
      margin-right: auto;
      max-width: 70vw;
      color: white;
+}
+
+#Linkedin-icon {
+    max-height: 1.2rem; 
+    transform: translateY(3.5px);
 }
 
 .website-example {
