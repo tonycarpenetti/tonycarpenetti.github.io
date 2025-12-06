@@ -270,7 +270,6 @@ for (let i = 0; i < numStars; i++) {
     rememberBtn.classList.remove('disabled');
   });
 
-
   // REMEMBER button: only works when stopped (updateRememberButton enforces disabled)
   rememberBtn.addEventListener('click', () => {
     if (rememberBtn.disabled) return;
@@ -329,6 +328,20 @@ for (let i = 0; i < numStars; i++) {
       manualNext();
     }
   });
+
+  // Scroll on the display: up = previous, down = next
+  display.addEventListener('wheel', (e) => {
+    e.preventDefault(); // prevent the page from scrolling
+
+    if (e.deltaY > 0) {
+      // scroll up → next
+      manualPrev();
+    } else if (e.deltaY < 0) {
+      // scroll down → previous
+      manualNext();
+    }
+  }, { passive: false });
+
 
   // Ensure pointer cursor for controls (defensive in case CSS differs)
   [rememberBtn, pauseBtn, continueBtn, stopBtn, prevBtn, nextBtn].forEach(b => {
