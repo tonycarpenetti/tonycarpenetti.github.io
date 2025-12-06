@@ -32,11 +32,6 @@ for (let i = 0; i < numStars; i++) {
 
 
 
-
-
-
- 
-
 /* automation.js — Memory Jogger
    Matches the following HTML IDs/classes:
    .letter[data-letter], #letter-display, #remember-btn,
@@ -54,10 +49,11 @@ for (let i = 0; i < numStars; i++) {
   const prevBtn = document.getElementById('prev-btn');
   const nextBtn = document.getElementById('next-btn');
   const speedSlider = document.getElementById('speed-slider');
-  const letterNums = document.getElementById('letter-nums');
+  // <-- keep the select element reference so we can read its current value dynamically
+  const letterNumsSelect = document.getElementById('letter-nums');
 
   // safety check
-  if (!display || !rememberBtn || !pauseBtn || !continueBtn || !stopBtn || !prevBtn || !nextBtn || !speedSlider) {
+  if (!display || !rememberBtn || !pauseBtn || !continueBtn || !stopBtn || !prevBtn || !nextBtn || !speedSlider || !letterNumsSelect) {
     console.error('automation.js: required elements not found. Check IDs/classes.');
     return;
   }
@@ -71,27 +67,58 @@ for (let i = 0; i < numStars; i++) {
   let isPaused = false;      // true when paused (sequence loaded but not running)
 
   // ----- utility functions -----
+
+  // generateSequences: minimal change to implement 2 / 3 letter modes
+  // startLetter: '' -> Remember button (all combos); otherwise single-letter prefix (clicked letter)
   function generateSequences(startLetter = '') {
+    const count = parseInt(letterNumsSelect.value, 10) || 2; // 2 or 3
     const seq = [];
-    if (startLetter) {
-      seq.push(startLetter);
-      for (const s of ALPHABET) seq.push(startLetter + s);
-    } else {
-      for (const a of ALPHABET) {
-        seq.push(a);
-        for (const b of ALPHABET) seq.push(a + b);
+
+    // helper loops to avoid repeated code for clarity
+    if (count === 2) {
+      if (startLetter) {
+        // e.g. clicked 'T' -> TA..TZ
+        for (let i = 0; i < ALPHABET.length; i++) {
+          seq.push(startLetter + ALPHABET[i]);
+        }
+      } else {
+        // Remember: AA..ZZ
+        for (let a = 0; a < ALPHABET.length; a++) {
+          for (let b = 0; b < ALPHABET.length; b++) {
+            seq.push(ALPHABET[a] + ALPHABET[b]);
+          }
+        }
+      }
+    } else { // count === 3
+      if (startLetter) {
+        // clicked 'T' -> TAA..TZZ (i.e. T + (AA..ZZ))
+        for (let i = 0; i < ALPHABET.length; i++) {
+          for (let j = 0; j < ALPHABET.length; j++) {
+            seq.push(startLetter + ALPHABET[i] + ALPHABET[j]);
+          }
+        }
+      } else {
+        // Remember: AAA..ZZZ
+        for (let a = 0; a < ALPHABET.length; a++) {
+          for (let b = 0; b < ALPHABET.length; b++) {
+            for (let c = 0; c < ALPHABET.length; c++) {
+              seq.push(ALPHABET[a] + ALPHABET[b] + ALPHABET[c]);
+            }
+          }
+        }
       }
     }
+
     return seq;
   }
 
   // slider -> delay in ms (right = faster)
   function getDelayMs() {
-    const min = Number(speedSlider.min || 100);
+    const min = Number(speedSlider.min || 20);
     const max = Number(speedSlider.max || 2000);
     const val = Number(speedSlider.value);
     // map val from [min,max] to [SLOW,FAST] where val=max => FAST
-    const SLOW = 1500;
+    const SLOW = 3000;
     const FAST = 100;
     const pct = (val - min) / (max - min || 1);
     return Math.round(SLOW + (FAST - SLOW) * pct);
@@ -235,10 +262,19 @@ for (let i = 0; i < numStars; i++) {
     });
   });
 
+  // When the number-of-letters selector changes,
+  // allow Remember to be used immediately.
+  letterNumsSelect.addEventListener('change', () => {
+    stopAll();              // Reset everything, like clicking a new starting letter
+    rememberBtn.disabled = false;
+    rememberBtn.classList.remove('disabled');
+  });
+
+
   // REMEMBER button: only works when stopped (updateRememberButton enforces disabled)
   rememberBtn.addEventListener('click', () => {
     if (rememberBtn.disabled) return;
-    // load full A->ZZ and start
+    // load full A->ZZ or AAA->ZZZ depending on select and start
     sequences = generateSequences('');
     startAutoFrom(0);
   });
@@ -314,4 +350,3 @@ for (let i = 0; i < numStars; i++) {
     startAutoFrom, pauseAuto, stopAll, manualPrev, manualNext, generateSequences, state: () => ({isRunning, isPaused, currentIndex, sequencesLength: sequences.length})
   };
 })();
-

@@ -624,7 +624,6 @@ button {
   height: auto;
 }
 
-
 /* Text front-layer + blur   */
 .text-wrapper {
   position: relative;
@@ -641,6 +640,11 @@ button {
   color: white;
   text-align: center;
   margin: 0.4rem 0;
+}
+
+.slider-block div {
+    text-align: center;
+    margin-top: 15px;
 }
 
 
