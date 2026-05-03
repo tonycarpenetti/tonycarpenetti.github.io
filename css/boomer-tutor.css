@@ -1,0 +1,493 @@
+/* ============================================================
+   boomer-tutor.css
+   Boomer Tutor — Web App Styles
+   Designed for legibility: large text, generous spacing, high contrast.
+   ============================================================ */
+
+/* ---------- CSS Variables ---------- */
+:root {
+  --bt-navy:        #1a3a5c;
+  --bt-navy-light:  #264d7a;
+  --bt-blue:        #3a7bd5;
+  --bt-blue-light:  #e6f1fb;
+  --bt-teal:        #1d9e75;
+  --bt-teal-light:  #e1f5ee;
+  --bt-amber:       #bf7a0e;
+  --bt-amber-light: #faeeda;
+  --bt-red-light:   #faece7;
+  --bt-red-text:    #7a2a0a;
+  --bt-green-light: #eaf3de;
+  --bt-green-text:  #2d5c0e;
+  --bt-gray-100:    #f4f4f2;
+  --bt-gray-200:    #e8e8e5;
+  --bt-gray-500:    #888780;
+  --bt-gray-700:    #444441;
+  --bt-text:        #1e1e1c;
+  --bt-text-muted:  #5f5e5a;
+  --bt-border:      rgba(0,0,0,0.1);
+  --bt-radius-sm:   8px;
+  --bt-radius-md:   12px;
+  --bt-radius-lg:   16px;
+  --bt-shadow:      0 2px 12px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.06);
+  --bt-shadow-hover:0 6px 24px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.08);
+  --bt-font-serif:  'Lora', Georgia, serif;
+  --bt-font-sans:   'Source Sans 3', 'Segoe UI', system-ui, sans-serif;
+  --bt-transition:  0.18s ease;
+}
+
+/* ---------- Wrapper ---------- */
+.bt-app {
+  font-family: var(--bt-font-sans);
+  font-size: 17px;
+  color: var(--bt-text);
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 8px 0 48px;
+}
+
+/* ---------- Search Bar ---------- */
+.bt-search-wrap {
+  margin: 0 0 32px;
+}
+
+.bt-search-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.bt-search-icon {
+  position: absolute;
+  left: 16px;
+  width: 20px;
+  height: 20px;
+  color: var(--bt-gray-500);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.bt-search-input {
+  width: 100%;
+  padding: 16px 52px 16px 48px;
+  font-family: var(--bt-font-sans);
+  font-size: 18px;
+  color: var(--bt-text);
+  background: #fff;
+  border: 2px solid var(--bt-gray-200);
+  border-radius: var(--bt-radius-md);
+  outline: none;
+  transition: border-color var(--bt-transition), box-shadow var(--bt-transition);
+  box-shadow: var(--bt-shadow);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.bt-search-input::placeholder {
+  color: var(--bt-gray-500);
+}
+
+.bt-search-input:focus {
+  border-color: var(--bt-blue);
+  box-shadow: 0 0 0 4px rgba(58,123,213,0.12), var(--bt-shadow);
+}
+
+.bt-search-input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.bt-search-clear {
+  position: absolute;
+  right: 14px;
+  background: var(--bt-gray-200);
+  border: none;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  font-size: 13px;
+  color: var(--bt-gray-700);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--bt-transition);
+}
+
+.bt-search-clear:hover {
+  background: var(--bt-gray-500);
+  color: #fff;
+}
+
+.bt-result-count {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--bt-text-muted);
+  min-height: 20px;
+  padding-left: 4px;
+}
+
+/* ---------- Tutorial Grid ---------- */
+.bt-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* ---------- Tutorial Card ---------- */
+.bt-card {
+  background: #fff;
+  border: 1.5px solid var(--bt-border);
+  border-radius: var(--bt-radius-lg);
+  padding: 22px 20px 18px;
+  cursor: pointer;
+  transition: transform var(--bt-transition), box-shadow var(--bt-transition), border-color var(--bt-transition);
+  box-shadow: var(--bt-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+  list-style: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.bt-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--bt-card-accent, var(--bt-blue));
+  border-radius: var(--bt-radius-lg) var(--bt-radius-lg) 0 0;
+}
+
+.bt-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--bt-shadow-hover);
+  border-color: rgba(0,0,0,0.18);
+}
+
+.bt-card:focus-visible {
+  outline: 3px solid var(--bt-blue);
+  outline-offset: 2px;
+}
+
+.bt-card-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bt-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--bt-radius-sm);
+  background: var(--bt-card-icon-bg, var(--bt-blue-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.bt-card-title {
+  font-family: var(--bt-font-serif);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--bt-text);
+  line-height: 1.3;
+}
+
+.bt-card-desc {
+  font-size: 15px;
+  color: var(--bt-text-muted);
+  line-height: 1.55;
+}
+
+.bt-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.bt-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.02em;
+}
+
+.bt-badge-easy   { background: var(--bt-green-light); color: var(--bt-green-text); }
+.bt-badge-medium { background: var(--bt-amber-light); color: var(--bt-amber); }
+.bt-badge-tricky { background: var(--bt-red-light);   color: var(--bt-red-text); }
+
+.bt-card-steps {
+  font-size: 13px;
+  color: var(--bt-gray-500);
+}
+
+.bt-card-arrow {
+  position: absolute;
+  bottom: 18px;
+  right: 18px;
+  color: var(--bt-gray-500);
+  font-size: 20px;
+  transition: transform var(--bt-transition), color var(--bt-transition);
+}
+
+.bt-card:hover .bt-card-arrow {
+  transform: translateX(3px);
+  color: var(--bt-blue);
+}
+
+/* Empty / no results */
+.bt-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--bt-text-muted);
+}
+
+.bt-empty-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.bt-empty h3 {
+  font-family: var(--bt-font-serif);
+  font-size: 20px;
+  color: var(--bt-text);
+  margin-bottom: 8px;
+}
+
+/* ---------- Detail View ---------- */
+.bt-detail {
+  animation: bt-fade-in 0.22s ease both;
+}
+
+@keyframes bt-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.bt-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: 1.5px solid var(--bt-gray-200);
+  border-radius: var(--bt-radius-sm);
+  padding: 10px 18px;
+  font-family: var(--bt-font-sans);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--bt-text-muted);
+  cursor: pointer;
+  transition: background var(--bt-transition), color var(--bt-transition), border-color var(--bt-transition);
+  margin-bottom: 28px;
+}
+
+.bt-back svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.bt-back:hover {
+  background: var(--bt-gray-100);
+  color: var(--bt-text);
+  border-color: var(--bt-gray-500);
+}
+
+.bt-detail-hero {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1.5px solid var(--bt-gray-200);
+}
+
+.bt-detail-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--bt-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.bt-detail-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.bt-detail-title {
+  font-family: var(--bt-font-serif);
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--bt-text);
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+
+.bt-detail-subline {
+  font-size: 15px;
+  color: var(--bt-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Tip / Warning boxes */
+.bt-box {
+  border-radius: var(--bt-radius-md);
+  padding: 16px 18px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.bt-box-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.bt-tip {
+  background: var(--bt-blue-light);
+  border-left: 4px solid var(--bt-blue);
+  color: #0c3d6e;
+}
+
+.bt-tip .bt-box-label { color: var(--bt-navy); }
+
+.bt-warning {
+  background: var(--bt-amber-light);
+  border-left: 4px solid var(--bt-amber);
+  color: #5c3800;
+}
+
+.bt-warning .bt-box-label { color: var(--bt-amber); }
+
+/* Steps */
+.bt-steps {
+  margin: 8px 0 24px;
+}
+
+.bt-step {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 0;
+  position: relative;
+}
+
+/* Connector line between steps */
+.bt-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 17px;
+  top: 36px;
+  bottom: -16px;
+  width: 2px;
+  background: var(--bt-gray-200);
+}
+
+.bt-step-wrap {
+  padding-bottom: 24px;
+}
+
+.bt-step-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--bt-navy);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 600;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.bt-step-body {
+  flex: 1;
+  min-width: 0;
+  padding-top: 6px;
+}
+
+.bt-step-title {
+  font-family: var(--bt-font-serif);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--bt-text);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.bt-step-text {
+  font-size: 16px;
+  color: var(--bt-text-muted);
+  line-height: 1.7;
+}
+
+/* Success footer */
+.bt-success {
+  background: var(--bt-green-light);
+  border-radius: var(--bt-radius-md);
+  padding: 16px 18px;
+  font-size: 16px;
+  color: var(--bt-green-text);
+  line-height: 1.6;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.bt-success-check {
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  .bt-search-input {
+    font-size: 16px;
+    padding: 14px 48px 14px 44px;
+  }
+
+  .bt-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .bt-detail-hero {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .bt-detail-title {
+    font-size: 22px;
+  }
+
+  .bt-step-title {
+    font-size: 16px;
+  }
+
+  .bt-step-text {
+    font-size: 15px;
+  }
+}

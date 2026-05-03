@@ -1,0 +1,64 @@
+<!--
+  ============================================================
+  BOOMER TUTOR — Web App Insert
+  ============================================================
+  INSTRUCTIONS:
+  1. Place tutorials.js in the same folder as your HTML file.
+  2. Drop the <link> tag into your <head>.
+  3. Drop everything below into your .website-example section.
+  4. Add the <script> tags before </body>.
+
+  FILE STRUCTURE:
+    your-site/
+    ├── index.html         ← your existing HTML
+    ├── tutorials.js       ← the data file (provided separately)
+    └── boomer-tutor.css   ← the stylesheet (provided separately)
+  ============================================================
+-->
+
+<!-- ① Add this to your <head> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="boomer-tutor.css">
+
+<!-- ② Drop this inside your .website-example section -->
+<div class="bt-app" id="bt-app">
+
+  <!-- Search bar -->
+  <div class="bt-search-wrap">
+    <div class="bt-search-inner">
+      <svg class="bt-search-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="1.8"/>
+        <path d="M13.5 13.5L17 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      <input
+        type="search"
+        id="bt-search"
+        class="bt-search-input"
+        placeholder="Search tutorials… (e.g. Bluetooth, Wi-Fi, password)"
+        aria-label="Search tutorials"
+        autocomplete="off"
+      >
+      <button class="bt-search-clear" id="bt-clear" aria-label="Clear search" hidden>✕</button>
+    </div>
+    <div class="bt-result-count" id="bt-count" aria-live="polite"></div>
+  </div>
+
+  <!-- Tutorial grid (home view) -->
+  <div class="bt-grid" id="bt-grid" role="list"></div>
+
+  <!-- Detail view (hidden until a card is clicked) -->
+  <div class="bt-detail" id="bt-detail" hidden aria-label="Tutorial detail">
+    <button class="bt-back" id="bt-back">
+      <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M12 4L6 10L12 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      All Tutorials
+    </button>
+    <div id="bt-detail-content"></div>
+  </div>
+
+</div>
+
+<!-- ③ Add these before </body> (tutorials.js first, then the app script) -->
+<script src="tutorials.js"></script>
+<script src="boomer-tutor-app.js"></script>
