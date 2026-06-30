@@ -7,7 +7,7 @@ window.onload = function() {
 
 
 window.addEventListener("DOMContentLoaded", () => {
-  const resumeDate = "5-1-26";
+  const resumeDate = "6-30-26";
   const link = document.getElementById("resume-link");
   const thumbnail = document.getElementById("resume-thumbnail");
 
