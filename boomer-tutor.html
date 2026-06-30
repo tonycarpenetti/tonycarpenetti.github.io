@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tony Carpenetti</title>
+    <meta name="author" content="Tony">
+    <meta property="og:image" content="/images/tdc-solo-logo.png">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="icon" type="image/png" href="/tdc-favicon-light.png" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/png" href="/tdc-favicon-dark.png" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/boomer-tutor.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="https://tonycarpenetti.github.io">
+                    <img class="tdc-logo" src="/images/tony-carpenetti-logo_1.png" alt="TDC">
+                </a>
+            </div>
+            <ul class="links">
+                <li class="header_btn"><a href="https://tonycarpenetti.github.io">Home</a></li>
+                <!-- <li class="header_btn"><a href="https://tonycarpenetti.github.io/resume">About</a></li> -->
+                <li class="header_btn"><a href="https://tonycarpenetti.github.io/portfolio">Portfolio</a></li>
+                <li class="header_btn"><a href="https://tonycarpenetti.github.io/resume">Resume</a></li>
+                <li class="header_btn"><a href="https://tonycarpenetti.github.io/blog">Blog</a></li>
+            </ul>
+            <a href="mailto:carpenetti2013@gmail.com" class="action_btn">Contact</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+                <!-- <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 
+                            14.3 32 32s-14.3 32-32 32H32C14.3 
+                            128 0 113.7 0 96zm0 160c0-17.7 14.3-32 
+                            32-32H416c17.7 0 32 14.3 32 
+                            32s-14.3 32-32 32H32c-17.7 
+                            0-32-14.3-32-32zm0 160c0-17.7 
+                            14.3-32 32-32H416c17.7 0 32 
+                            14.3 32 32s-14.3 32-32 
+                            32H32c-17.7 0-32-14.3-32-32z"/>
+                </svg> -->
+            </div>
+            <div class="dropdown_menu">
+                <li><a href="https://tonycarpenetti.github.io" class="dropdown_btn">Home</a></li>
+                <!-- <li class="header_btn"><a href="https://tonycarpenetti.github.io/resume" class="dropdown_btn">About</a></li> -->
+                <li><a href="https://tonycarpenetti.github.io/portfolio" class="dropdown_btn">Portfolio</a></li>
+                <li><a href="https://tonycarpenetti.github.io/resume" class="dropdown_btn">Resume</a></li>
+                <li><a href="https://tonycarpenetti.github.io/blog" class="dropdown_btn">Blog</a></li>
+                <li><a href="mailto:carpenetti2013@gmail.com" class="action_btn">Contact</a></li>
+            </div>
+        </nav>
+    </header>
+
+    <div class="stars-container"></div>
+
+    <script>
+    const toggleBtn = document.querySelector('.toggle_btn')
+    const toggleBtnIcon = document.querySelector('.toggle_btn i')
+    const dropDownMenu = document.querySelector('.dropdown_menu')
+
+    toggleBtn.onclick = function () {
+        dropDownMenu.classList.toggle('open')
+        const isOpen = dropDownMenu.classList.contains('open')
+
+        toggleBtnIcon.classList = isOpen
+        ? 'fa-solid fa-xmark'
+        : 'fa-solid fa-bars'
+    };
+    </script>
+
+    <main>
+        <section class="intro">
+            <h1><span class="hello">Boomer Tutor</span></h1>
+            <p>Basic tutorials for the technologically challenged.</p>
+            <p>Click in the search bar below to find a topic, 
+                or scroll until you find what you're looking for.</p>
+        </section>
+        <section> <!-- class="website-example" style="text-align:center;"> -->
+            <div class="bt-app" id="bt-app">
+
+                <!-- Search bar -->
+                <div class="bt-search-wrap">
+                    <div class="bt-search-inner">
+                    <svg class="bt-search-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                        <circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="1.8"/>
+                        <path d="M13.5 13.5L17 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    </svg>
+                    <input
+                        type="search"
+                        id="bt-search"
+                        class="bt-search-input"
+                        placeholder="Search tutorials… (e.g. Bluetooth, Wi-Fi, password)"
+                        aria-label="Search tutorials"
+                        autocomplete="off"
+                    >
+                    <button class="bt-search-clear" id="bt-clear" aria-label="Clear search" hidden>✕</button>
+                    </div>
+                    <div class="bt-result-count" id="bt-count" aria-live="polite"></div>
+                </div>
+
+                <!-- Tutorial grid (home view) -->
+                <div class="bt-grid" id="bt-grid" role="list"></div>
+
+                <!-- Detail view (hidden until a card is clicked) -->
+                <div class="bt-detail" id="bt-detail" hidden aria-label="Tutorial detail">
+                    <button class="bt-back" id="bt-back">
+                    <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M12 4L6 10L12 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    All Tutorials
+                    </button>
+                    <div id="bt-detail-content"></div>
+                </div>
+
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <a class="gen-link footnote"href="https://tonycarpenetti.github.io">
+            &copy; Tony Carpenetti <script>document.write(new Date().getFullYear());</script>
+        </a>
+    </footer>
+
+    <script src="/js/automation.js"></script>
+    <script src="/js/tutorials.js"></script>
+    <script src="/js/boomer-tutor-app.js"></script>
+
+</body>
+</html>
