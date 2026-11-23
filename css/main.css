@@ -338,6 +338,11 @@ Specifically in the media query section though */
     max-width: 100vw;
 }
 
+.resume-link {
+    display: inline-block;
+    width: fit-content;
+}
+
 .resume-thumbnail {
      display: block;
      margin-left: auto;
